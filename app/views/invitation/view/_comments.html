@@ -1,0 +1,60 @@
+﻿<div ng-controller="InvitationCommentsCtrl">
+    <h4>
+        Comments
+        ({{invitation.comments.length}})
+    </h4>
+    <hr />
+
+    <div ng-if="guest.id" class="comments-box">
+        <textarea ng-model="newComment.message" rows="2" placeholder="Enter Your Comment"></textarea>
+        <button class="btn btn-info" ng-click="submitComment()">Post comment</button>
+    </div>
+    <div ng-if="!guest.id">
+        You are not allowed to post comments.
+        Only invited guests can post comments.
+    </div>
+    <div class="comments-list">
+        <span ng-if="invitation.comments.length < 1">
+            No comments yet.<br /> Be the first to leave a comment!
+        </span>
+        <div class="comment clearfix animated fadeInDown" ng-repeat="comment in invitation.comments">
+            <span class="name"><b>{{comment.userName}}</b> said:</span>
+            <span class="date">{{comment.date|date:'MMM d y, hh:mm'}}</span>
+            <p>{{comment.message}}</p>
+            <div class="comment-actions animated fadeIn">
+                <a ng-click="showReplyForm(comment)">
+                    <i class="fa fa-reply"></i>
+                    Reply
+                </a>
+                <a class="pull-right"
+                   ng-if="comment.userId==guest.id"
+                   ng-click="removeComment(comment, $index)">
+                    <i class="fa fa-remove"></i>
+                    Remove
+                </a>
+            </div>
+            <div class="comments-box reply" ng-if="replyFormVisible(comment)">
+                <textarea ng-model="newReply.message" rows="2" placeholder="Enter Your Comment"></textarea>
+                <a ng-click="submitCommentReply(comment)">Submit</a>
+                <a ng-click="cancelReply()">Cancel</a>
+            </div>
+
+            <div class="comment-reply clearfix animated fadeInDown" ng-repeat="reply in comment.replies">
+                <span class="name"><b>{{reply.userName}}</b> replied:</span>
+                <span class="date">{{reply.date|date:'MMM d y, hh:mm'}}</span>
+                <p>{{reply.message}}</p>
+                <div class="comment-actions animated fadeIn">
+                    <a class="pull-right"
+                       ng-if="reply.userId==guest.id"
+                       ng-click="removeCommentReply(comment, reply, $index)">
+                        <i class="fa fa-remove"></i>
+                        Remove
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>

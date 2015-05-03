@@ -1,0 +1,28 @@
+﻿<form name="form.guestListForm" ng-submit="save()">
+
+    <div class="panel panel-default animated fast fadeInLeft">
+        <div class="panel-body">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" class="form-control" type="email" ng-model="email" />
+                </div>
+                <button class="btn btn-success" ng-click="add()">Add</button>
+            </div>
+
+            <div class="guest-list">
+                <label>Guests ({{ invitation.guestList.length }})</label>
+                <ul>
+                    <li ng-repeat="guest in invitation.guestList">
+                        {{ guest.name }} - {{ guest.email }}
+                        <span class="fa fa-remove" ng-click="remove(guest)"></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-success send pull-right" ng-click="send()" >Send Invitation</button>
+        </div>
+    </div>
+</form>

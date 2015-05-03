@@ -1,0 +1,34 @@
+﻿<div class="sidebar-menu">
+    <a ng-click="openSidebar('GuestList')"
+       ng-class="{active: sidebarOpened('GuestList')}">
+        <i class="fa fa-users">
+            <span class="badge" ng-show="invitation.guestList.length > 0">{{invitation.guestList.length}}</span>
+        </i>
+        <div class="text"> Guest List</div>
+    </a>
+    <a ng-click="openSidebar('Comments')"
+       ng-class="{active: sidebarOpened('Comments')}">
+        <i class="fa fa-comment">
+            <span class="badge" ng-show="invitation.comments.length > 0">{{invitation.comments.length}}</span>
+        </i>
+        <div class="text">Comments</div>
+    </a>
+    <a>
+        <i class="fa fa-calendar"></i>
+        <div class="text">Add to Calendar</div>
+    </a>
+    <a>
+        <i class="fa fa-map-marker"></i>
+        <div class="text">View Map</div>
+    </a>
+    <a>
+        <i class="fa fa-print"></i>
+        <div class="text">Print</div>
+    </a>
+</div>
+<!--<div class="share">
+    <div class="fb-share-button" data-href="{{url}}" data-layout="button"></div>
+</div>-->
+<div class="sidebar-panel" ng-class="{'collapse': !sidebarOpen}">
+    <div class="animated fadeIn" ng-include="sidebarPath"></div>
+</div>

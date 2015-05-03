@@ -1,0 +1,22 @@
+﻿<div class="guest-list">
+    <h4>Guest List</h4>
+    <hr/>
+    <div>
+        <div class="guest-count-left">
+            <h2>{{invitation.guestList.length}}</h2>
+            <h6>guests <br /> invited</h6>
+        </div>
+        <div class="guest-count-right">
+            <div class="attending-1">Attending ({{invitation.guestList.attendingNo}})</div>
+            <div class="attending-2">Not Attending ({{invitation.guestList.notAttendingNo}})</div>
+            <div class="attending-3">Undecided ({{invitation.guestList.undecidedNo}})</div>
+        </div>
+    </div>
+    <ul class="list list-unstyled">
+        <li ng-repeat="guest in invitation.guestList" class="animated fadeInDown">
+            <i class="fa fa-circle attending-{{guest.rsvpResponse.attending}}"></i>
+            {{guest.name}} <{{guest.email}}>
+        </li>
+    </ul>
+</div>
+

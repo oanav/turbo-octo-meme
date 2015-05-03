@@ -1,0 +1,83 @@
+﻿
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+<style>
+    .body {
+        background-image: url(/Views/Templates/lilies/flowers_background_05.jpg);
+        background-repeat: repeat;
+        position: relative;
+        font-size: 16px;
+        color: #630f11;
+    }
+
+        .body input {
+            color: #630f11;
+            text-align: center;
+        }
+
+    h1, h2, .body h2 input {
+        color: #c92327;
+        text-shadow: 1px 1px #fff;
+    }
+
+    .content {
+        text-align: center;
+        padding-bottom: 50px;
+        padding: 30px 0;
+        max-width: 850px;
+        height: 450px;
+        background: #feeeea;
+        border: 7px double #c92327;
+    }
+
+    h1 {
+        font-family: 'Great Vibes';
+        font-size: 10vh;
+    }
+
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    h2 input {
+        font-size: 8vh;
+    }
+
+    .footer {
+        background: #feeeea;
+    }
+</style>
+<div class="body">
+    <div class="content absolute-center">
+        <h1>You're invited to</h1>
+        <h2><input ng-model="invitation.details.title" placeholder="[Event Title]" /></h2>
+        <div class="details row">
+            <div class="col-md-4">
+                <input auto-expand datepicker-popup="fullDate" placeholder="MM/DD/YYYY" ng-model="invitation.details.date" /><br />
+                <input size="8" timepicker-popup placeholder="HH:MM" ng-model="invitation.details.time" />
+            </div>
+            <div class="col-md-4">
+                <input type="text" auto-expand ng-model="invitation.details.location" placeholder="[Location Name]" /><br />
+                <input type="text" auto-expand ng-model="invitation.details.address" placeholder="[Location Address]" />
+            </div>
+            <div class="col-md-4">
+                <p class="contact-info" ng-if="readOnly ">
+                    <a ng-if="invitation.details.contactPhone" ng-href="tel:{{invitation.details.contactPhone}}">
+                        <i class="fa fa-phone"></i>
+                        {{invitation.details.contactPhone}}
+                    </a><br />
+                    <a ng-if="invitation.details.contactEmail" ng-href="tel:{{invitation.details.contactEmail}}">
+                        <i class="fa fa-envelope"></i>
+                        {{invitation.details.contactEmail}}
+                    </a>
+                </p>
+                <p class="contact-info" ng-if="!readOnly">
+                    <i class="fa fa-phone"></i><input type="tel" auto-expand ng-model="invitation.details.contactPhone" /><br />
+                    <i class="fa fa-envelope"></i><input type="tel" auto-expand ng-model="invitation.details.contactEmail" />
+                </p>
+            </div>
+        </div>
+        <div ng-include="'/Views/Shared/_InvitationFooter.html'">
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,48 @@
+﻿<footer class="footer">
+    <ul class="social" ng-show="template.fields.allowSharing">
+        <li><a href="http://twitter.com" class="fa fa-facebook"></a></li>
+        <li><a href="http://facebook.com" class="fa fa-twitter"></a></li>
+    </ul>
+    <div class="wrapper">
+        <div class="response">
+            <span> Attend? </span>
+
+            <div class="btn-group">
+                <label class="checkbox yes" btn-radio="1" ng-model="guest.rsvpResponse.attending" ng-click="showResponseForm=true">Yes</label>
+                <label class="checkbox no" btn-radio="2" ng-model="guest.rsvpResponse.attending" ng-click="showResponseForm=true">No</label>
+                <label class="checkbox" btn-radio="3" ng-model="guest.rsvpResponse.attending" ng-click="showResponseForm=true">Maybe</label>
+            </div>
+        </div>
+        <form class="form animated fast fadeInUp" ng-show="showResponseForm" ng-submit="sendResponse()">
+            <div class="row">
+                <div class="form-group-inline col-md-6">
+                    <label class="control-label">Number of persons: </label>
+                    <input ng-model="guest.rsvpResponse.noOfPersons" type="number" class="form-control" />
+                </div>
+                <div class="form-group-inline col-md-6">
+                    <label class="control-label">Children: </label>
+                    <input ng-model="guest.rsvpResponse.noOfChildren" type="number" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Name: </label>
+                    <input ng-model="guest.name" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="control-label">Email: </label>
+                    <input ng-model="guest.email" type="email" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Message: </label>
+                <textarea ng-model="guest.rsvpResponse.message" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-btn-group">
+                <button type="submit" class="btn btn-success">Send Response</button>
+                <a class="cancel" ng-click="cancelResponse()">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+</footer>

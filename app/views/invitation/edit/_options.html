@@ -1,0 +1,42 @@
+﻿<form name="form.optionsForm" class="form-horizontal" ng-submit="save()">
+    <div class="panel panel-default animated fast fadeInLeft">
+        <div class="panel-body options">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="checkbox" ng-model="invitation.options.showRSVP" />
+                    <label>Show RSVP</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" ng-model="invitation.options.showGuestList" />
+                    <label>Show Guest List</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="checkbox" ng-model="invitation.options.allowComments" />
+                    <label>Allow Comments</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" ng-model="invitation.options.allowSharing" />
+                    <label>Allow Sharing</label>
+                </div>
+            </div>
+            <div>&nbsp;</div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="checkbox" ng-model="invitation.options.notifyGuestResponse" />
+                    <label>Notify me when a guest responds</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" ng-model="invitation.options.notifyGuestComment" />
+                    <label>Notify me when a guest posts a comment</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <input type="button" class="btn btn-default" value="Reset" ng-click="reset()" />
+            <a ui-sref="editInvitation.guestList" ng-click="save()" class="btn btn-success pull-right">Next</a>
+        </div>
+    </div>
+</form>

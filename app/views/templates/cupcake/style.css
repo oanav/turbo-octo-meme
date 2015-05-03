@@ -1,0 +1,57 @@
+﻿.body {
+    background-image: url(../cupcake/cupcake-background.jpg);
+    background-size: cover;
+    background-position: right;
+    background-color: #0090cc;
+    font-size: 16px;
+}
+
+h1, h2 {
+    font-family: 'Cookie', cursive !important;
+    text-shadow: 1px 1px #999;
+    color: #fff;
+}
+
+h1 {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.body input {
+    color: #fff;
+    font-size: 16px;
+}
+
+    .body input:hover, .body input:focus, .body input:active {
+        border-color: #fff;
+    }
+
+.body h2 input {
+    font-family: 'Cookie', cursive !important;
+    font-size: 45px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px #999;
+}
+
+.contact-info a,
+.contact-info a:hover,
+.contact-info a:active,
+.contact-info a:visited {
+    color: #fff;
+}
+
+.content {
+    color: #fff;
+    margin: 50px 15%;
+    font-size: 18px;
+    font-family: 'Roboto Slab';
+}
+
+.footer {
+    color: #fff;
+    background: rgba(0, 129, 182, 0.90);
+}
+
+    .footer a {
+        color: #fff;
+    }

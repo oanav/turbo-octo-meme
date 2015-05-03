@@ -1,0 +1,102 @@
+﻿.search-page {
+
+    .breadcrumb {
+        padding: 5px 15px;
+        margin: 10px 0;
+    }
+
+    .filters {
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        width: 200px;
+        float: left;
+
+        > a {
+            color: @gray;
+            font-size: 0.8em;
+            cursor: pointer;
+        }
+
+        .fa.toggle {
+            margin-right: 5px;
+
+            &:before {
+                content: "\f0d7";
+            }
+
+            &.collapsed:before {
+                content: "\f0da";
+            }
+        }
+
+        h6 {
+            font-weight: 500;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .list-group {
+            list-style: none;
+
+            & > li {
+                line-height: 1.5em;
+
+                & > a {
+                    color: @gray;
+                    margin-left: 12px;
+                }
+            }
+
+            &.colors > li {
+                display: inline-block;
+            }
+        }
+
+        .checkbox {
+            padding: 0;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .colorbox {
+            margin: 0 4px;
+        }
+    }
+
+    .results {
+        padding-left: 220px;
+        width: 100%;
+
+        hr {
+            margin: 15px 0;
+        }
+
+        .invitation {
+            height: 220px;
+            width: 280px;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 30px;
+
+            a {
+                text-decoration: none;
+            }
+
+            &:hover img {
+                opacity: .75;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            .title {
+                color: @gray;
+                text-align: center;
+            }
+        }
+    }
+}
