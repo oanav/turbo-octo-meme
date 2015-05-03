@@ -22,18 +22,17 @@ app.controllers.controller('EditInvitationCtrl',
         $scope.loader.loading = true;
         TemplatesAPI.getTemplate(template)
           .success(function (response) {
-                    if (response) {
-                        $scope.template = response;
-                        $scope.invitation.template = $scope.template;
-                        $scope.templatePath = "/Views/Templates/" + $scope.template.path + "/template.html";
-                        $scope.loader.loading = false;
-                    }
-                })
+          if (response) {
+            $scope.template = response;
+            $scope.invitation.template = $scope.template;
+            $scope.templatePath = "/Views/Templates/" + $scope.template.path + "/template.html";
+            $scope.loader.loading = false;
+          }
+        })
           .error(function (err) {
-                    console.log(err);
-                });
-            }
-            else {
+          console.log(err);
+        });
+            } else {
         $scope.loader.loading = true;
         InvitationsAPI.getInvitation(id)
           .success(function (response) {
@@ -49,12 +48,9 @@ app.controllers.controller('EditInvitationCtrl',
           }
         })
           .error(function (err) {
-                    console.log(err);
-                });
+          console.log(err);
+        });
             }
-
-
-
 
             $scope.back = function () {
         $window.history.back();
@@ -74,23 +70,4 @@ app.controllers.controller('EditInvitationCtrl',
         $scope.showResponseForm = false;
             };
 
-            //function initializeGMapSearchBox() {
-            //    // Create the search box and link it to the UI element.
-            //    var input = /** @type {HTMLInputElement} */(
-            //        document.getElementById('address'));
-
-            //    var searchBox = new google.maps.places.SearchBox((input));
-
-            //    // Listen for the event fired when the user selects an item from the
-            //    // pick list. Retrieve the matching places for that item.
-            //    google.maps.event.addListener(searchBox, 'places_changed', function () {
-            //        var places = searchBox.getPlaces();
-
-            //        if (places.length == 0) {
-            //            return;
-            //        }
-            //    });
-
-            //}
-
-        }])
+        }]);
