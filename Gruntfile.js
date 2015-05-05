@@ -54,7 +54,7 @@ module.exports = function (grunt) {
       less: {
         files: [
           '<%= yeoman.app %>/**/*.less'],
-        tasks: ['less', 'autoprefixer']
+        tasks: ['autoprefixer', 'less']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -212,11 +212,11 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.app %>/index.html': [
-            '<%= yeoman.app %>/scripts/controllers/**/*.js',
-            '<%= yeoman.app %>/scripts/directives/**/*.js',
+            '<%= yeoman.app %>/scripts/controllers/**/**/*.js',
+            '<%= yeoman.app %>/scripts/directives/**/**/*.js',
             '<%= yeoman.app %>/scripts/filters/**/*.js',
-            '<%= yeoman.app %>/scripts/services/**/*.js',
-            '<%= yeoman.app %>/scripts/web-services/**/*.js']
+            '<%= yeoman.app %>/scripts/services/**/**/*.js',
+            '<%= yeoman.app %>/scripts/web-services/**/**/*.js']
         }
       },
 

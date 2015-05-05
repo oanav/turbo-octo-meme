@@ -20,7 +20,7 @@
     .content .text {
         color: #b386c6;
         position: relative;
-        top: 220px;
+        top: 200px;
         text-align: center;
         font-size: 18px;
         font-weight: 500;
@@ -78,4 +78,6 @@ h2 {
     background-color: #a765c3;
     color: #fff;
     opacity: .9;
+    position: absolute;
+    bottom: 0;
 }

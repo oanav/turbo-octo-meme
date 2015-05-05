@@ -1,5 +1,4 @@
-﻿
-<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+﻿<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 <style>
     .body {
         background: #f7f0f7;
@@ -55,42 +54,47 @@
 
     .footer {
         background: #ebc8de;
+        position: absolute;
+        bottom: 0;
     }
 </style>
 <div class="body">
     <div class="top-frame"></div>
-    <div class="content container">
+    <fields class="content container" read-only="readOnly">
         <h1>You're invited to</h1>
-        <h2><input ng-model="invitation.details.title" placeholder="[Event Title]"/></h2>
+        <h2>
+            <field ng-model="invitation.details.title" placeholder="[Event Title]"></field>
+        </h2>
         <div class="details row">
             <div class="col-md-4">
-                <input auto-expand datepicker-popup="fullDate" placeholder="MM/DD/YYYY" ng-model="invitation.details.date" /><br/>
-                <input size="8" timepicker-popup placeholder="HH:MM" ng-model="invitation.details.time" />
+                <field filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>
+                <br/>
+                <field filter="date:shortTime" placeholder="[time]" ng-model="invitation.details.time"></field>
             </div>
             <div class="col-md-4">
-                <input type="text" auto-expand ng-model="invitation.details.location" placeholder="[Location Name]" /><br />
-                <input type="text" auto-expand ng-model="invitation.details.address" placeholder="[Location Address]" />
+                <field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
+                <br />
+                <field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
             </div>
             <div class="col-md-4">
-                <p class="contact-info" ng-if="readOnly ">
+                <p class="contact-info" ng-if="readOnly">
                     <a ng-if="invitation.details.contactPhone" ng-href="tel:{{invitation.details.contactPhone}}">
-                        <i class="fa fa-phone"></i>
-                        {{invitation.details.contactPhone}}
-                    </a><br/>
+                           <i class="fa fa-phone"></i>{{invitation.details.contactPhone}}
+                        </a>
+                    <br/>
                     <a ng-if="invitation.details.contactEmail" ng-href="tel:{{invitation.details.contactEmail}}">
-                        <i class="fa fa-envelope"></i>
-                        {{invitation.details.contactEmail}}
-                    </a>
+                        	<i class="fa fa-envelope"></i>{{invitation.details.contactEmail}}
+                        </a>
                 </p>
                 <p class="contact-info" ng-if="!readOnly">
-                    <i class="fa fa-phone"></i><input type="tel" auto-expand ng-model="invitation.details.contactPhone" /><br/>
-                    <i class="fa fa-envelope"></i><input type="tel" auto-expand ng-model="invitation.details.contactEmail" />
+                    <i class="fa fa-phone"></i>
+                    <field ng-model="invitation.details.contactPhone" placeholder="[]"></field>
+                    <br/>
+                    <i class="fa fa-envelope"></i>
+                    <field ng-model="invitation.details.contactEmail" placeholder="[]"></field>
                 </p>
             </div>
         </div>
-    </div>
-    <div ng-include="'/Views/Shared/_InvitationFooter.html'">
-    </div>
-    <!--<div class="bottom-frame"></div>-->
-
-</div>
+    </fields>
+    <div ng-include="'/views/shared/_invitationFooter.html'"></div>
+    <!--<div class="bottom-frame"></div>--></div>

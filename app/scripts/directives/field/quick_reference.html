@@ -1,0 +1,29 @@
+<fields read-only="readOnly">
+	<!--Title field-->
+	<field ng-model="invitation.details.title" placeholder="[Event Title]"></field>
+	<!-- Name field-->
+	<field ng-model="invitation.details.name" placeholder="[Name]"></field>
+	<!-- Date field -->
+	<field filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>
+	<!--Time field-->
+    <field filter="date:shortTime"placeholder="[time]" ng-model="invitation.details.time"></field>
+	<!--Location field-->
+	<field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
+	<!--Location address field-->
+	<field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
+	<!-- Contact info fields -->
+	<p class="contact-info" ng-if="readOnly">Contact:
+		<a ng-if="invitation.details.contactPhone" ng-href="tel:{{invitation.details.contactPhone}}">
+           <i class="fa fa-phone"></i>{{invitation.details.contactPhone}}
+        </a>
+		<a ng-if="invitation.details.contactEmail" ng-href="tel:{{invitation.details.contactEmail}}">
+        	<i class="fa fa-envelope"></i>{{invitation.details.contactEmail}}
+        </a>
+	</p>
+	<p class="contact-info" ng-if="!readOnly">Contact:
+		<i class="fa fa-phone"></i>
+		<field ng-model="invitation.details.contactPhone" placeholder="[]"></field>
+		<i class="fa fa-envelope"></i>
+		<field ng-model="invitation.details.contactEmail" placeholder="[]"></field>
+	</p>
+</fields>

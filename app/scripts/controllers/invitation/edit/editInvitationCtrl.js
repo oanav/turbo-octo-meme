@@ -63,10 +63,14 @@ app.controllers.controller('EditInvitationCtrl',
           }
         };
 
-            }
-            // close response form
+            };
+            
+            //show rsvp response form
+            $scope.onSetResponse = function() {
+        $scope.showResponseForm = true;
+            };
+            // close rsvp response form
             $scope.cancelResponse = function () {
-        $scope.guest.rsvpResponse = {};
         $scope.showResponseForm = false;
             };
 

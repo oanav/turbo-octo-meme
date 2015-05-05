@@ -1,46 +1,45 @@
 ﻿<form name="form.detailsForm" class="form-horizontal" ng-submit="save()">
     <div class="panel panel-default animated fast fadeInLeft">
+        <notifications-bar class="notifications"></notifications-bar>
         <div class="alert alert-info">
-            <i class="fa fa-info-circle"></i>
-            Edit your invitation by editing the fields below, or directly in the invitation preview.
-        </div>
+            <i class="fa fa-info-circle"></i>Edit your invitation by editing the fields below, or directly in the invitation preview.</div>
         <div class="panel-body">
             <div class="form-group" ng-if="template.detailsFields.title">
-                <label class="col-md-4 control-label" for="title">Title:</label>
-                <div class="col-md-8">
+                <label class="col-sm-4 control-label" for="title">Title:</label>
+                <div class="col-sm-8">
                     <input id="title" class="form-control" type="text" ng-model="invitation.details.title" />
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.name">
-                <label for="title" class="col-md-4 control-label">Name:</label>
-                <div class="col-md-8">
-                    <input id="name" class="col-md-8 form-control" type="text" ng-model="invitation.details.name" />
+                <label for="title" class="col-sm-4 control-label">Name:</label>
+                <div class="col-sm-8">
+                    <input id="name" class="col-sm-8 form-control" type="text" ng-model="invitation.details.name" />
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.age">
-                <label for="title" class="col-md-4 control-label">Age:</label>
-                <div class="col-md-8">
-                    <input id="age" class="col-md-8 form-control" type="number" size="2" ng-model="invitation.details.age" />
+                <label for="title" class="col-sm-4 control-label">Age:</label>
+                <div class="col-sm-8">
+                    <input id="age" class="col-sm-8 form-control" type="number" size="2" ng-model="invitation.details.age" />
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.brideName">
-                <label for="brideNmae" class="col-md-4 control-label">Bride Name:</label>
-                <div class="col-md-8">
-                    <input id="brideNmae" class="col-md-8 form-control" type="text" ng-model="invitation.details.brideName" />
+                <label for="brideNmae" class="col-sm-4 control-label">Bride Name:</label>
+                <div class="col-sm-8">
+                    <input id="brideNmae" class="col-sm-8 form-control" type="text" ng-model="invitation.details.brideName" />
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.groomName">
-                <label for="groomName" class="col-md-4 control-label">Groom Name:</label>
-                <div class="col-md-8">
-                    <input id="groomName" class="col-md-8 form-control" type="text" ng-model="invitation.details.groomName" />
+                <label for="groomName" class="col-sm-4 control-label">Groom Name:</label>
+                <div class="col-sm-8">
+                    <input id="groomName" class="col-sm-8 form-control" type="text" ng-model="invitation.details.groomName" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="date" class="col-md-4 control-label">Date:</label>
-                <div class="col-md-8 input-group datepicker">
-                    <input class="form-control" datepicker-popup="MM/dd/yyyy" show-weeks="false" show-button-bar="false" placeholder="MM/DD/YYYY" ng-model="invitation.details.date" is-open="isOpened" />
-                    <span class="btn input-group-btn"
-                          ng-click="
+                <label for="date" class="col-sm-4 control-label">Date:</label>
+                <div class="col-sm-8 input-group datepicker">
+                    <input class="form-control" datepicker-popup="MM/dd/yyyy" show-weeks="false" show-button-bar="false" placeholder="MM/DD/YYYY"
+                    ng-model="invitation.details.date" is-open="isOpened" />
+                    <span class="btn input-group-btn" ng-click="
                             $event.preventDefault();
                             $event.stopPropagation();
                             isOpened=true; ">
@@ -49,11 +48,10 @@
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.time">
-                <label for="time" class="col-md-4 control-label">Time:</label>
-                <div class="col-md-8 input-group timepicker">
+                <label for="time" class="col-sm-4 control-label">Time:</label>
+                <div class="col-sm-8 input-group timepicker">
                     <input class="form-control" timepicker-popup is-open="timepickerOpened" ng-model="invitation.details.time" />
-                    <span class="btn input-group-btn"
-                          ng-click="
+                    <span class="btn input-group-btn" ng-click="
                             $event.preventDefault();
                             $event.stopPropagation();
                             timepickerOpened=true; ">
@@ -62,39 +60,37 @@
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.location">
-                <label for="location" class="col-md-4 control-label">Location:</label>
-                <div class="col-md-8">
+                <label for="location" class="col-sm-4 control-label">Location:</label>
+                <div class="col-sm-8">
                     <input id="location" type="text" class="form-control" ng-model="invitation.details.location" />
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.address">
-                <label for="address" class="col-md-4 control-label">Address:</label>
-                <div class="input-group col-md-8">
-                    <address-autocomplete class="form-control" address-data="invitation.details.address">
-                    </address-autocomplete>
+                <label for="address" class="col-sm-4 control-label">Address:</label>
+                <div class="input-group col-sm-8">
+                    <address-autocomplete class="form-control" address-data="invitation.details.address"></address-autocomplete>
                     <span class="input-group-icon">
                         <i class="fa fa-map-marker"></i>
                     </span>
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.contactPhone">
-                <label for="phone" class="col-md-4 control-label">Contact phone:</label>
-                <div class="col-md-8">
+                <label for="phone" class="col-sm-4 control-label">Contact phone:</label>
+                <div class="col-sm-8">
                     <input id="phone" class="form-control" type="tel" ng-model="invitation.details.contactPhone" />
                 </div>
             </div>
             <div class="form-group" ng-if="template.detailsFields.contactEmail">
-                <label for="email" class="col-md-4 control-label">Contact email:</label>
-                <div class="col-md-8">
+                <label for="email" class="col-sm-4 control-label">Contact email:</label>
+                <div class="col-sm-8">
                     <input id="email" class="form-control" type="email" ng-model="invitation.details.contactEmail" />
                 </div>
             </div>
         </div>
         <div class="panel-footer">
-            <div ng-show="alert" class="alert alert-{{alert.type}} animated fadeInUp">{{alert.msg}}</div>
-
             <input type="button" class="btn btn-default" value="Reset" ng-click="reset()" />
-            <a ui-sref="editInvitation.options" ng-click="save()" class="btn btn-success pull-right">Next</a>
+            <input type="submit" class="btn btn-default" value="Save Draft" />
+            <a ui-sref="editInvitation.options" class="btn btn-success pull-right" ng-click="navigate()" ng-disabled="form.detailsForm.$invalid">Next</a>
         </div>
     </div>
 </form>

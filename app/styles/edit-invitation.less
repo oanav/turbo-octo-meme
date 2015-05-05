@@ -147,12 +147,28 @@
             height: 100%;
             width: 100%;
 
+            .notifications-container {
+                line-height: 1.6;
+                min-height: 0;
+                
+                .message { 
+                    display: inline-block;
+                    padding: 10px 25px;
+                    font-size: .75em;
+                } 
+                .close-click {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+
             .alert-info {
                 margin: 5px;
                 margin-bottom: 0;
                 font-size: .875em;
                 padding: 5px 10px;
-                background: @state-info-bg; 
+                background: @sidebar-panel-hd;
+                color: @link-color; 
 
                 i {
                     font-size: 1.4em;

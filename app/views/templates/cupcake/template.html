@@ -1,37 +1,40 @@
-﻿
-<link href="/views/templates/cupcake/style.css" rel="stylesheet" />
+﻿<link href="/views/templates/cupcake/style.css" rel="stylesheet" />
 <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 <div class="body">
-    <div class="content">
+    <fields class="content" read-only="readOnly">
         <h1>Let's celebrate!</h1>
-        <div><b>You're invited to</b></div>
-        <h2><input auto-expand ng-model="invitation.details.name" placeholder="[Name]" /> Birthday Party</h2>
+        <div>
+            <b>You're invited to</b>
+        </div>
+        <h2>
+            <field ng-model="invitation.details.name" placeholder="[Name]"></field> Birthday Party</h2>
         <p>
-            <b>When: </b><input class="inline" auto-expand datepicker-popup="fullDate" placeholder="MM/DD/YYYY" ng-model="invitation.details.date" />
-            <input class="inline" size="8" timepicker-popup placeholder="HH:MM" ng-model="invitation.details.time" />
+            <b>When:</b>
+            <field class="inline" filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>
+            <field placeholder="[time]" filter="date:shortTime" ng-model="invitation.details.time"></field>
         </p>
         <p>
-            <b>Where: </b><input auto-expand ng-model="invitation.details.location" placeholder="[Location name]" /><br />
-            <input auto-expand ng-model="invitation.details.address" placeholder="Location address" />
+            <b>Where:</b>
+            <field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
+            <br />
+            <field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
         </p>
-        <p class="contact-info"
-           ng-if="readOnly && (invitation.details.contactPhone || invitation.details.contactEmail)">
-            Contact info:
+        <p class="contact-info" ng-if="readOnly">Contact:
             <a ng-if="invitation.details.contactPhone" ng-href="tel:{{invitation.details.contactPhone}}">
-                <i class="fa fa-phone"></i>
-                {{invitation.details.contactPhone}}
-            </a>
+                    <i class="fa fa-phone"></i>
+                    {{invitation.details.contactPhone}}
+                </a>
             <a ng-if="invitation.details.contactEmail" ng-href="tel:{{invitation.details.contactEmail}}">
-                <i class="fa fa-envelope"></i>
-                {{invitation.details.contactEmail}}
-            </a>
+                    <i class="fa fa-envelope"></i>
+                    {{invitation.details.contactEmail}}
+                </a>
         </p>
-        <p class="contact-info" ng-if="!readOnly && (invitation.details.contactPhone || invitation.details.contactEmail)">
-            Contact info:
-            <i class="fa fa-phone"></i><input type="tel" auto-expand ng-model="invitation.details.contactPhone" />
-            <i class="fa fa-envelope"></i><input type="tel" auto-expand ng-model="invitation.details.contactEmail" />
+        <p class="contact-info" ng-if="!readOnly">Contact:
+            <i class="fa fa-phone"></i>
+            <field ng-model="invitation.details.contactPhone" placeholder="[]"></field>
+            <i class="fa fa-envelope"></i>
+            <field ng-model="invitation.details.contactEmail" placeholder="[]"></field>
         </p>
-    </div>
-    <div ng-include="'/Views/Shared/_InvitationFooter.html'"></div>
-
+    </fields>
+    <div ng-include="'/views/shared/_invitationFooter.html'"></div>
 </div>

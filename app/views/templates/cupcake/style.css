@@ -42,6 +42,7 @@ h1 {
 
 .content {
     color: #fff;
+    display: block;
     margin: 50px 15%;
     font-size: 18px;
     font-family: 'Roboto Slab';
@@ -50,6 +51,8 @@ h1 {
 .footer {
     color: #fff;
     background: rgba(0, 129, 182, 0.90);
+    position: absolute;
+    bottom: 0;
 }
 
     .footer a {

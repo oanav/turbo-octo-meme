@@ -7,19 +7,19 @@
             <h1>
                 <field ng-model="invitation.details.name" placeholder="[name]"></field>
             </h1>
-            <h2>
-                is turning <field ng-model="invitation.details.age" placeholder="[age]"></field>
+            <h2>is turning
+                <field ng-model="invitation.details.age" placeholder="[age]"></field>
             </h2>
             <p>
-                <field date="DD/mm/yyyy" placeholder="MM/DD/YYYY" ng-model="invitation.details.date"></field>
-                <field placeholder="HH:MM" ng-model="invitation.details.time"></field>
+                <field filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>
+                <field filter="date:shortTime"placeholder="[HH:MM]" ng-model="invitation.details.time"></field>
             </p>
             <p>
-                <field ng-model="invitation.details.location" placeholder="[Location Name]"></field><br />
+                <field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
+                <br />
                 <field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
             </p>
-            <p class="contact-info" ng-if="readOnly ">
-                RSVP:
+            <p class="contact-info" ng-if="readOnly">RSVP:
                 <a ng-if="invitation.details.contactPhone" ng-href="tel:{{invitation.details.contactPhone}}">
                     <i class="fa fa-phone"></i>
                     {{invitation.details.contactPhone}}
@@ -29,17 +29,15 @@
                     {{invitation.details.contactEmail}}
                 </a>
             </p>
-            <p class="contact-info" ng-if="!readOnly">
-                RSVP:
-                <i class="fa fa-phone"></i><field ng-model="invitation.details.contactPhone"></field>
-                <i class="fa fa-envelope"></i><field ng-model="invitation.details.contactEmail"></field>
+            <p class="contact-info" ng-if="!readOnly">RSVP:
+                <i class="fa fa-phone"></i>
+                <field ng-model="invitation.details.contactPhone"></field>
+                <i class="fa fa-envelope"></i>
+                <field ng-model="invitation.details.contactEmail"></field>
             </p>
         </fields>
-
-        <img class="img-right" src="/Views/Templates/minnie_daisy/Daisy.png" />
+        <img class="img-right" src="/views/templates/minnie_daisy/Daisy.png" />
     </div>
-
 </div>
-<div ng-include="'/Views/Shared/_InvitationFooter.html'">
-</div>
+<div ng-include="'/views/shared/_invitationFooter.html'"></div>
 </div>

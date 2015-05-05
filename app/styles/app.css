@@ -1,3 +1,6 @@
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600');
+@import url('http://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700');
+@import url('http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700');
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -7401,6 +7404,7 @@ ul.social li a.fa {
   right: 15px;
   top: 0;
   line-height: 37px;
+  font-size: 14px;
   background: #fff;
 }
 .timepicker .dropdown-menu {
@@ -7410,8 +7414,9 @@ ul.social li a.fa {
   box-shadow: none;
   border-radius: 0;
   padding: 0 10px;
-  border-color: #ddd;
+  border: 1px solid #ddd;
   margin-left: 10px;
+  font-size: 14px;
 }
 .input-group .input-group-btn:hover,
 .input-group .input-group-btn:focus,
@@ -7567,12 +7572,26 @@ ul.social li a.fa {
   height: 100%;
   width: 100%;
 }
+.edit-invitation .sidebar-panel .panel .notifications-container {
+  line-height: 1.6;
+  min-height: 0;
+}
+.edit-invitation .sidebar-panel .panel .notifications-container .message {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: .75em;
+}
+.edit-invitation .sidebar-panel .panel .notifications-container .close-click {
+  position: absolute;
+  right: 0;
+}
 .edit-invitation .sidebar-panel .panel .alert-info {
   margin: 5px;
   margin-bottom: 0;
   font-size: .875em;
   padding: 5px 10px;
-  background: #d1edfa;
+  background: #f1f8fb;
+  color: #1ab3f5;
 }
 .edit-invitation .sidebar-panel .panel .alert-info i {
   font-size: 1.4em;
@@ -7892,6 +7911,7 @@ ul.social li a.fa {
   height: calc(100% - 56px);
   width: 100%;
   display: inline-block;
+  position: relative;
 }
 .invitation-body > .body {
   height: 100%;
@@ -8037,9 +8057,9 @@ body {
   width: 100%;
   height: 100%;
 }
-/*#ui-view {
-    height: calc(~"100% - 53px");
-}*/
+#ui-view {
+  min-height: 70vh;
+}
 .navbar {
   margin: 0;
   padding: 0;
@@ -8096,6 +8116,7 @@ body {
   border-top: 2px solid #1ab3f5;
   max-height: 500px;
   -webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
+  transform: perspective(400) rotate3d(0, 0, 0, 0);
 }
 .navbar-menu .nav li .submenu {
   list-style: none;
@@ -8109,8 +8130,6 @@ body {
   padding: 10px 0;
   max-height: 0;
   overflow: hidden;
-  -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
-  -webkit-transform-origin: 50% 0;
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
   -o-transition: 300ms;
@@ -8141,8 +8160,6 @@ body {
   margin: -10px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: #f5f5f5;
 }

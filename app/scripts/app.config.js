@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var appConfig = function ($stateProvider, $locationProvider, $httpProvider) {
+var appConfig = function ($stateProvider, $locationProvider, $httpProvider, notificationsConfigProvider) {
 
     // UI States, URL Routing & Mapping. For more info see: https://github.com/angular-ui/ui-router
     // ------------------------------------------------------------------------------------------------------------
@@ -79,10 +79,13 @@ var appConfig = function ($stateProvider, $locationProvider, $httpProvider) {
 //    $locationProvider.html5Mode(true);
 
     //  $httpProvider.interceptors.push(AuthHttpResponseInterceptor);
+    
+    notificationsConfigProvider.setAutoHide(false);
+    notificationsConfigProvider.setAcceptHTML(true);
 
 };
 
-appConfig.$inject = ['$stateProvider', '$locationProvider', '$httpProvider'];
+appConfig.$inject = ['$stateProvider', '$locationProvider', '$httpProvider', 'notificationsConfigProvider'];
 
 // Gets executed during the provider registrations and configuration phase. Only providers and constants can be
 // injected here. This is to prevent accidental instantiation of services before they have been fully configured.

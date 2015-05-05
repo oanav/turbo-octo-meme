@@ -33,9 +33,6 @@ label {
 input[type='checkbox'] {
     margin: 0;
 
-    &:after {
-    }
-
     & + label {
         margin: 0;
         font-weight: normal;
@@ -149,6 +146,7 @@ ul.social {
         right: 15px;
         top: 0;
         line-height: 37px;
+        font-size: 14px;
         background: #fff;
     }
 }
@@ -163,8 +161,9 @@ ul.social {
     box-shadow: none;
     border-radius: 0;
     padding: 0 10px;
-    border-color: #ddd;
+    border: 1px solid #ddd;
     margin-left: 10px;
+    font-size: 14px;
 
     &:hover, &:focus, &:active {
         border-color: @brand-primary;

@@ -8,9 +8,9 @@
             <span> Attend? </span>
 
             <div class="btn-group">
-                <label class="checkbox yes" btn-radio="1" ng-model="guest.rsvpResponse.attending" ng-click="showResponseForm=true">Yes</label>
-                <label class="checkbox no" btn-radio="2" ng-model="guest.rsvpResponse.attending" ng-click="showResponseForm=true">No</label>
-                <label class="checkbox" btn-radio="3" ng-model="guest.rsvpResponse.attending" ng-click="showResponseForm=true">Maybe</label>
+                <label class="checkbox yes" btn-radio="1" ng-model="guest.rsvpResponse.attending" ng-click="onSetResponse()">Yes</label>
+                <label class="checkbox no" btn-radio="2" ng-model="guest.rsvpResponse.attending" ng-click="onSetResponse()">No</label>
+                <label class="checkbox" btn-radio="3" ng-model="guest.rsvpResponse.attending" ng-click="onSetResponse()">Maybe</label>
             </div>
         </div>
         <form class="form animated fast fadeInUp" ng-show="showResponseForm" ng-submit="sendResponse()">

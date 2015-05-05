@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
         <!-- endbower -->
+        <link rel="stylesheet" href="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.css" />
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/app.css -->
         <link rel="stylesheet" href="styles/app.css">
@@ -77,9 +78,10 @@
         </footer>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
         <script>
+            var ga;
             !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-                     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-                     r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+                     (A[l].q=A[l].q||[]).push(arguments);},A[l].l=+new Date,a=n.createElement(g),
+                     r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r);
                      }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
               
                      ga('create', 'UA-XXXXX-X');
@@ -101,30 +103,31 @@
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <!-- endbower -->
+        <script src="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.js"></script>
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/config.js"></script>
+        <script src="scripts/app.config.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true&libraries=places&language=en-US"></script>
         <!-- injector:js -->
-        <script src="scripts/controllers/browseCtrl.js"></script>
-        <script src="scripts/controllers/editInvitationCtrl.js"></script>
+        <script src="scripts/controllers/browse/browseCtrl.js"></script>
+        <script src="scripts/controllers/browse/templateCtrl.js"></script>
         <script src="scripts/controllers/error404Ctrl.js"></script>
         <script src="scripts/controllers/hello.js"></script>
         <script src="scripts/controllers/homeCtrl.js"></script>
-        <script src="scripts/controllers/invitationCommentsCtrl.js"></script>
-        <script src="scripts/controllers/invitationDetailsCtrl.js"></script>
-        <script src="scripts/controllers/invitationGuestListCtrl.js"></script>
-        <script src="scripts/controllers/invitationOptionsCtrl.js"></script>
+        <script src="scripts/controllers/invitation/edit/editInvitationCtrl.js"></script>
+        <script src="scripts/controllers/invitation/edit/invitationDetailsCtrl.js"></script>
+        <script src="scripts/controllers/invitation/edit/invitationGuestListCtrl.js"></script>
+        <script src="scripts/controllers/invitation/edit/invitationOptionsCtrl.js"></script>
+        <script src="scripts/controllers/invitation/view/invitationCommentsCtrl.js"></script>
+        <script src="scripts/controllers/invitation/view/viewInvitationCtrl.js"></script>
         <script src="scripts/controllers/loginCtrl.js"></script>
-        <script src="scripts/controllers/mapModalCtrl.js"></script>
+        <script src="scripts/controllers/modals/mapModalCtrl.js"></script>
+        <script src="scripts/controllers/modals/responseModalCtrl.js"></script>
         <script src="scripts/controllers/navigationCtrl.js"></script>
-        <script src="scripts/controllers/responseModalCtrl.js"></script>
-        <script src="scripts/controllers/templateCtrl.js"></script>
-        <script src="scripts/controllers/viewInvitationCtrl.js"></script>
         <script src="scripts/directives/addressAutocomplete.js"></script>
         <script src="scripts/directives/autoexpand.js"></script>
-        <script src="scripts/directives/field.js"></script>
+        <script src="scripts/directives/field/field.js"></script>
         <script src="scripts/directives/timepicker-popup.js"></script>
         <script src="scripts/filters/filters.js"></script>
         <script src="scripts/services/AuthHttpResponseInterceptor.js"></script>

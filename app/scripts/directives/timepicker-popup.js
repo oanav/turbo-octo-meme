@@ -203,7 +203,8 @@ function ($compile, $parse, $document, $position, dateFilter, dateParser) {
             // Outter change
             ngModel.$render = function () {
                 scope.time = parseTime(ngModel.$modelValue);
-                scope.updateElement();
+                //scope.updateElement();
+                element.val(dateFilter(scope.time, 'shortTime'));
             };
 
 
