@@ -1,4 +1,6 @@
-﻿app.directives.directive('timepickerPopup', ['$compile', '$parse', '$document', '$position', 'dateFilter', 'dateParser',
+﻿'use strict';
+
+app.directives.directive('timepickerPopup', ['$compile', '$parse', '$document', '$position', 'dateFilter', 'dateParser',
 function ($compile, $parse, $document, $position, dateFilter, dateParser) {
     return {
         restrict: 'EA',
@@ -241,4 +243,4 @@ function ($compile, $parse, $document, $position, dateFilter, dateParser) {
             });
         }
     };
-}])
+}]);

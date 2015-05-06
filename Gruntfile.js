@@ -33,24 +33,24 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
-//      injectJS: {
-//        files: [
-//          '<%= yeoman.app %>/**/*.js',
-//          '!<%= yeoman.app %>/**/*.spec.js',
-//          '!<%= yeoman.app %>/scripts/app.js'],
-//        tasks: ['injector:scripts']
-//      },
+            //      injectJS: {
+            //        files: [
+            //          '<%= yeoman.app %>/**/*.js',
+            //          '!<%= yeoman.app %>/**/*.spec.js',
+            //          '!<%= yeoman.app %>/scripts/app.js'],
+            //        tasks: ['injector:scripts']
+            //      },
       jsTest: {
         files: [
           '<%= yeoman.app %>/**/*.spec.js',
         ],
         tasks: ['newer:jshint:all', 'karma']
       },
-//      injectLess: {
-//        files: [
-//          '<%= yeoman.app %>/**/*.less'],
-//        tasks: ['injector:less']
-//      },
+            //      injectLess: {
+            //        files: [
+            //          '<%= yeoman.app %>/**/*.less'],
+            //        tasks: ['injector:less']
+            //      },
       less: {
         files: [
           '<%= yeoman.app %>/**/*.less'],
@@ -212,11 +212,13 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.app %>/index.html': [
-            '<%= yeoman.app %>/scripts/controllers/**/**/*.js',
+            '<%= yeoman.app %>/modules/**/**/module.js',
+            '<%= yeoman.app %>/modules/**/**/controllers/*.js',
+            '<%= yeoman.app %>/modules/**/**/services/*.js',
             '<%= yeoman.app %>/scripts/directives/**/**/*.js',
             '<%= yeoman.app %>/scripts/filters/**/*.js',
             '<%= yeoman.app %>/scripts/services/**/**/*.js',
-            '<%= yeoman.app %>/scripts/web-services/**/**/*.js']
+          ]
         }
       },
 

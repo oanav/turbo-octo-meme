@@ -1,0 +1,11 @@
+﻿<div class="invitation-view">
+    <div class="loader-wrapper" ng-show="loader.loading">
+        <img class="loader" src="/images/swirl.GIF" />
+    </div>
+    <div class="invitation-sidebar" ng-include="'/modules/invitation/view/views/sidebar.html'"></div>
+    <div class="invitation">
+        <div ng-include="'/modules/main/views/shared/header.html'"></div>
+        <div class="invitation-body animated fadeIn" ng-class="{ 'read-only': readOnly }" ng-include="templatePath">
+        </div>
+    </div>
+</div>

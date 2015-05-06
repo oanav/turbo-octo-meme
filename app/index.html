@@ -29,7 +29,7 @@
         <![endif]-->
         <!-- Add your site or application content here -->
         <header class="navbar" role="banner" ng-if="layout != layouts.EMPTY">
-            <div ng-include="'/views/shared/header.html'"></div>
+            <div ng-include="'/modules/main/views/shared/header.html'"></div>
             <nav class="collapse navbar-collapse navbar-menu" role="navigation" ng-controller="NavigationCtrl">
                 <div class="container">
                     <ul class="nav navbar-nav">
@@ -106,35 +106,42 @@
         <script src="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.js"></script>
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/app.config.js"></script>
+        <script src="app.js"></script>
+        <script src="app.config.js"></script>
+        <script src="route.config.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true&libraries=places&language=en-US"></script>
         <!-- injector:js -->
-        <script src="scripts/controllers/browse/browseCtrl.js"></script>
-        <script src="scripts/controllers/browse/templateCtrl.js"></script>
-        <script src="scripts/controllers/error404Ctrl.js"></script>
-        <script src="scripts/controllers/hello.js"></script>
-        <script src="scripts/controllers/homeCtrl.js"></script>
-        <script src="scripts/controllers/invitation/edit/editInvitationCtrl.js"></script>
-        <script src="scripts/controllers/invitation/edit/invitationDetailsCtrl.js"></script>
-        <script src="scripts/controllers/invitation/edit/invitationGuestListCtrl.js"></script>
-        <script src="scripts/controllers/invitation/edit/invitationOptionsCtrl.js"></script>
-        <script src="scripts/controllers/invitation/view/invitationCommentsCtrl.js"></script>
-        <script src="scripts/controllers/invitation/view/viewInvitationCtrl.js"></script>
-        <script src="scripts/controllers/loginCtrl.js"></script>
-        <script src="scripts/controllers/modals/mapModalCtrl.js"></script>
-        <script src="scripts/controllers/modals/responseModalCtrl.js"></script>
-        <script src="scripts/controllers/navigationCtrl.js"></script>
+        <script src="modules/auth/module.js"></script>
+        <script src="modules/invitation/module.js"></script>
+        <script src="modules/main/module.js"></script>
+        <script src="modules/modals/module.js"></script>
+        <script src="modules/templates/module.js"></script>
+        <script src="modules/user/module.js"></script>
+        <script src="modules/invitation/edit/controllers/editDetailsCtrl.js"></script>
+        <script src="modules/invitation/edit/controllers/editGuestListCtrl.js"></script>
+        <script src="modules/invitation/edit/controllers/editInvitationCtrl.js"></script>
+        <script src="modules/invitation/edit/controllers/editOptionsCtrl.js"></script>
+        <script src="modules/invitation/view/controllers/invitationCommentsCtrl.js"></script>
+        <script src="modules/invitation/view/controllers/invitationViewCtrl.js"></script>
+        <script src="modules/main/controllers/hello.js"></script>
+        <script src="modules/main/controllers/homeCtrl.js"></script>
+        <script src="modules/main/controllers/navigationCtrl.js"></script>
+        <script src="modules/modals/controllers/loginCtrl.js"></script>
+        <script src="modules/modals/controllers/loginModal.js"></script>
+        <script src="modules/modals/controllers/mapModalCtrl.js"></script>
+        <script src="modules/modals/controllers/responseModalCtrl.js"></script>
+        <script src="modules/templates/controllers/detailsCtrl.js"></script>
+        <script src="modules/templates/controllers/searchCtrl.js"></script>
+        <script src="modules/invitation/edit/services/commentsService.js"></script>
+        <script src="modules/invitation/edit/services/invitationsService.js"></script>
+        <script src="modules/templates/services/searchService.js"></script>
+        <script src="modules/templates/services/templatesService.js"></script>
         <script src="scripts/directives/addressAutocomplete.js"></script>
         <script src="scripts/directives/autoexpand.js"></script>
         <script src="scripts/directives/field/field.js"></script>
         <script src="scripts/directives/timepicker-popup.js"></script>
         <script src="scripts/filters/filters.js"></script>
         <script src="scripts/services/AuthHttpResponseInterceptor.js"></script>
-        <script src="scripts/web-services/CommentsAPI.js"></script>
-        <script src="scripts/web-services/InvitationsAPI.js"></script>
-        <script src="scripts/web-services/SearchAPI.js"></script>
-        <script src="scripts/web-services/TemplatesAPI.js"></script>
         <!-- endinjector -->
         <!-- endbuild -->
     </body>

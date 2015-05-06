@@ -1,4 +1,6 @@
-﻿app.directives.directive('fields', function () {
+﻿'use strict';
+
+app.directives.directive('fields', function () {
     return {
         restrict: 'EA',
         transclude: true,
@@ -33,7 +35,10 @@ app.directives.directive('field', ['$compile', '$filter', function ($compile, $f
                 filterParam = fs[1];
             }
             modelCtrl.$render = function () {
-                if (textEl.css('opacity') == 0) { return; }
+                if (textEl.css('opacity') == "0") { 
+                     textEl.text(modelCtrl.$modelValue);
+                    return; 
+                }
                 var text = modelCtrl.$modelValue || placeholder;
                 if (modelCtrl.$modelValue && scope.filter) {
                     var filterVal = $filter(filterName)(modelCtrl.$modelValue, filterParam);

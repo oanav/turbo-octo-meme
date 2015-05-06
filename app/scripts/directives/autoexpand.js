@@ -1,4 +1,6 @@
-﻿app.directives.directive('autoExpand', function () {
+﻿'use strict';
+
+app.directives.directive('autoExpand', function () {
     return {
         restrict: 'A',
         priority: 10,

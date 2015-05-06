@@ -8070,6 +8070,7 @@ body {
   width: 100%;
   background: #eeeeee;
   border-bottom: 1px solid #ccc;
+  height: 56px;
 }
 .navbar-header .navbar-right {
   margin: 0;
