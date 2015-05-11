@@ -2,10 +2,11 @@
 'use strict';
 
 // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
-var app = angular.module('app', ['ui.router', 'ui.bootstrap',
+var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'uiGmapgoogle-maps',
     'app.filters', 'app.services', 'app.directives',
     'app.main', 'app.invitation', 'app.templates', 'app.user', 'app.modals',
-    'ngNotificationsBar', 'ngSanitize'])
+    'ngToast', 'ngAnimate', 'ngSanitize' 
+    ])
 
 // Gets executed after the injector is created and are used to kickstart the application. Only instances and constants
 // can be injected here. This is to prevent further system configuration during application run time.

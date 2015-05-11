@@ -7,34 +7,55 @@
             <b>You're invited to</b>
         </div>
         <h2>
-            <field ng-model="invitation.details.name" placeholder="[Name]"></field> Birthday Party</h2>
-        <p>
-            <b>When:</b>
-            <field class="inline" filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>
-            <field placeholder="[time]" filter="date:shortTime" ng-model="invitation.details.time"></field>
-        </p>
-        <p>
-            <b>Where:</b>
-            <field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
-            <br />
-            <field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
-        </p>
-        <p class="contact-info" ng-if="readOnly">Contact:
-            <a ng-if="invitation.details.contactPhone" ng-href="tel:{{invitation.details.contactPhone}}">
+            <field ng-model="invitation.details.name" placeholder="[Name]"></field>'s Birthday Party</h2>
+        <div class="row">
+            <b class="pull-left">When:</b>
+            <div class="pull-left">
+                <field placeholder="[Date]" filter="date:fullDate" ng-model="invitation.details.date"></field>
+                <field placeholder="[Start time]" filter="date:shortTime" ng-model="invitation.details.startTime"></field>
+                <field placeholder="[End time]" filter="date:shortTime" ng-if="invitation.details.endTime" ng-model="invitation.details.endTime">-</field>
+            </div>
+        </div>
+        <div class="row">
+            <b class="pull-left">Where:</b>
+            <div class="pull-left">
+                <field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
+                <br />
+                <field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
+            </div>
+        </div>
+        <!-- <p class="contact-info" ng-if="readOnly">
+            <b>Host:</b>
+            <div>{{invitation.details.hostName}}</div>
+            <a ng-if="invitation.details.phone" ng-href="tel:{{invitation.details.phone}}">
                     <i class="fa fa-phone"></i>
-                    {{invitation.details.contactPhone}}
+                    {{invitation.details.phone}}
                 </a>
-            <a ng-if="invitation.details.contactEmail" ng-href="tel:{{invitation.details.contactEmail}}">
+           <a ng-if="invitation.details.contactEmail" ng-href="tel:{{invitation.details.contactEmail}}">
                     <i class="fa fa-envelope"></i>
                     {{invitation.details.contactEmail}}
                 </a>
-        </p>
-        <p class="contact-info" ng-if="!readOnly">Contact:
-            <i class="fa fa-phone"></i>
-            <field ng-model="invitation.details.contactPhone" placeholder="[]"></field>
-            <i class="fa fa-envelope"></i>
-            <field ng-model="invitation.details.contactEmail" placeholder="[]"></field>
-        </p>
+        </p>-->
+        <div class="row">
+            <b class="pull-left">Host:</b>
+            <div class="pull-left">
+                <field ng-model="invitation.details.hostName" placeholder="[Host]"></field>
+                <br/>
+                
+                <field ng-if="!readOnly" ng-model="invitation.details.phone" placeholder="[Phone]">
+                    <i class="fa fa-phone"></i>
+                </field>
+                <a ng-if="readOnly && invitation.details.phone" ng-href="tel:{{invitation.details.phone}}">
+                    <i class="fa fa-phone"></i>
+                    {{invitation.details.phone}}
+                </a>
+                <!-- <i class="fa fa-envelope"></i>
+            <field ng-model="invitation.details.contactEmail" placeholder="[]"></field>-->
+            </div>
+        </div>
+        <div>
+            <field type="textarea" ng-model="invitation.details.additionalInfo"></field>
+        </div>
     </fields>
     <div ng-include="'/modules/invitation/_shared/_invitationFooter.html'"></div>
 </div>

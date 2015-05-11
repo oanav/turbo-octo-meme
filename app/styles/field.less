@@ -1,0 +1,46 @@
+.fields {
+    &.readOnly .field {
+        border:0;
+        cursor: default;
+    }
+}
+
+.field {
+    position: relative;
+    display: inline-block;
+    border: 1px solid transparent;
+    padding: 0px 4px;
+
+    &:hover {
+        border: 1px dashed #ccc;
+    }
+    
+    input, textarea {
+        background: none;
+        box-shadow: none;
+        border: 0;
+        padding: 0 4px;
+        display: inline-block;
+
+        &:focus, &:active {
+            box-shadow: none;
+            outline: none;
+        }
+    }
+     
+    textarea {
+        resize: none;
+    }
+    
+    .text {
+        display: inline-block;
+    }
+    
+    > input, > textarea {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}

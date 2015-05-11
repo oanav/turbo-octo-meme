@@ -2,9 +2,10 @@
     <div class="sidebar-panel">
         <div class="header">
             <a ng-href="/">
-                <i class="fa fa-arrow-circle-o-left"></i>
-                <span>Exit edit mode</span>
+                <i class="fa fa-chevron-left"></i>
+                <span>Back</span>
             </a>
+<!--            <a class="fa fa-remove" ng-click="showEditPanel = !showEditPanel"></a>-->
         </div>
         <div class="step-crumbs">
             <ul>
@@ -25,17 +26,22 @@
         <div class="loading-overlay" ng-show="loader.saving">
             Saving invitation...
         </div>
-        <div ui-view></div>
-        <span class="btn btn-default btn-collapse" ng-click="showEditPanel = !showEditPanel">
+        <div ui-view class="sidebar-content"></div>
+<!--        <span class="btn btn-default btn-collapse" ng-click="showEditPanel = !showEditPanel">
             <i class="fa fa-toggle-left"></i>
-        </span>
+        </span>-->
     </div>
 
     <div class="loader-wrapper" ng-show="loader.loading">
         <img class="loader" src="/images/swirl.GIF" />
     </div>
-    <div class="invitation">
-        <div ng-include="'/modules/main/views/shared/header.html'"></div>
+    <div class="invitation invitation-view">
+        <button class="btn btn-primary toggle-bar animated fadeInLeft" ng-class="{'active':showEditPanel}" 
+            ng-click="showEditPanel=!showEditPanel">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="header preview text-center">Preview</div>
+<!--        <div class="invitation-sidebar" ng-include="'/modules/invitation/view/views/sidebar.html'"></div>-->
         <div class="invitation-body" ng-include="templatePath">
         </div>
     </div>

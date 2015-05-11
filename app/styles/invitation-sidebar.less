@@ -1,0 +1,233 @@
+﻿@invitation-sidebar-width: 320px;
+
+.invitation-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    background: #414448;
+    z-index: 100;
+
+    .sidebar-menu {
+        padding: 0;
+        margin-top: 10vh;
+
+        a {
+            display: block;
+            color: #fafafa;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 7px;
+            min-height: 67px;
+            transition: 300ms ease-in all;
+            position: relative;
+
+            .fa {
+                font-size: 1.9em;
+                line-height: 1.5em;
+            }
+
+            .text {
+                display: none;
+                font-size: .75em;
+                font-weight: 500;
+                line-height: 1.5em;
+                margin-top: 3px;
+            }
+
+            &.active:after {
+                content: " ";
+                display: block;
+                position: absolute;
+                right: -1px;
+                top: 20px;
+                z-index: 1000;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid #fff;
+            }
+
+            &:hover, &.active {
+                /*background: rgba(255,255,255,.2);*/
+                min-height: 70px;
+                text-shadow: 1px 1px 2px #333;
+
+                .text {
+                    display: block;
+                }
+            }
+        }
+
+        .badge {
+            display: block;
+            position: absolute;
+            top: -2px;
+            right: -10px;
+            height: 18px;
+            line-height: 18px;
+            padding: 0 5px;
+            background: @brand-primary;
+            border: 1px solid #414448;
+        }
+        
+         .label-info {
+              font-size: 1rem;
+              position: absolute;
+              bottom: -1px;
+              right: -10px;
+              font-weight: 500;
+              box-shadow: -1px -1px 1px #999;
+        }
+    }
+    
+    ul.social {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+        margin: 10px 15px; 
+        
+        > li > a {
+            color: #fff;
+            margin: 10px;
+        }
+    }
+    
+    
+
+}
+
+.sidebar-panel .at-share-tbx-element.addthis_20x20_style .at-share-btn {
+  max-width: 24px;
+  max-height: 24px;
+  background-color: #444;
+}
+
+.invitation .sidebar-panel {
+    left: 70px !important;
+    transition: 300ms ease margin;
+    padding: 0 20px;
+    width: @invitation-sidebar-width;
+
+    &.collapse {
+        width: 1px;
+    }
+}
+
+.guest-list {
+
+    .guest-count-left {
+        float: left;
+
+        h2, h3, h4, h5, h6 {
+            display: inline-block;
+            margin: 0;
+            line-height: 1.5;
+            margin-right: 5px;
+        }
+    }
+
+    .guest-count-right {
+        float: right;
+        text-align: right;
+        line-height: 1.5;
+        font-size: 0.9em;
+    }
+
+    .list {
+        padding-top: 10px;
+        clear: both;
+
+        .fa {
+            margin-right: 5px;
+            color: @gray-lighter;
+
+            &.attending-1 {
+                color: @alert-success-text;
+            }
+
+            &.attending-2 {
+                color: @alert-danger-text;
+            }
+
+            &.attending-3 {
+                color: @gray-lighter;
+            }
+        }
+    }
+}
+
+.comments-box {
+    textarea {
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 4px 8px;
+
+        &:focus, &:active {
+            border-color: @brand-primary;
+        }
+    }
+
+    button {
+        margin-top: 10px;
+    }
+
+    &.reply {
+        margin-left: 15px;
+    }
+}
+
+.comments-list {
+    margin-top: 25px;
+
+
+    .comment, .comment-reply {
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        margin-top: 10px;
+
+        hr {
+            margin: 10px 0;
+            /*border-color: @brand-primary;*/
+        }
+
+        .name {
+            color: @brand-primary;
+        }
+
+        .name b {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .date {
+            font-size: .85em;
+            float: right;
+        }
+
+        p {
+            padding-left: 15px;
+            margin: 5px 0;
+        }
+
+
+        a {
+            font-size: .9em;
+            cursor: pointer;
+        }
+
+        .comment-actions {
+            display: none;
+        }
+
+        &:hover > .comment-actions {
+            display: block;
+        }
+    }
+
+    .comment-reply {
+        margin-left: 15px;
+    }
+}

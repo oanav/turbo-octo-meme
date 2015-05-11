@@ -170,6 +170,32 @@ ul.social {
     }
 }
 
+.floating-label {
+    position: relative;
+    padding-top: 20px;
+    color: #999;
+
+    label {
+        position: absolute;
+        z-index: 1;
+        background: #fff;
+        top: 5px;
+        left: 1px;
+        transform: translateY(20px);
+        transition: transform 0.15s ease-in;
+        font-size: 14px;
+        &.active {
+            font-size: 12px;
+            transform: translateY(0px);
+        }
+    }
+
+    input {
+        padding: 5px;
+        position: relative;
+    }
+}
+
 .datepicker {
     .dropdown-menu {
         padding: 0;
@@ -200,4 +226,21 @@ ul.social {
     overflow-x: auto;
     box-shadow: #777 2px -4px 4px;
     background: @sidebar-panel-bg;
+}
+
+.ng-toast.ng-toast--left {
+    left:0;
+    .ng-toast__list {
+    margin: 10px 10px 0 10px;
+    
+    }
+}
+ 
+.ng-toast .alert {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.ng-toast .close {
+    right: 2px;
 }

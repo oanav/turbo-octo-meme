@@ -7503,6 +7503,8 @@ ul.social li a.fa {
   position: relative;
   margin: 0;
   text-decoration: none;
+  text-transform: uppercase;
+  font-size: .9em;
   color: #bbbbbb;
   transition: none;
   min-width: 126.9px;
@@ -7520,13 +7522,13 @@ ul.social li a.fa {
 .edit-invitation .sidebar-panel .step-crumbs ul li a.active,
 .edit-invitation .sidebar-panel .step-crumbs ul li a:active,
 .edit-invitation .sidebar-panel .step-crumbs ul li a:hover {
-  background: #3498db;
+  background: #1981e4;
   color: #fff;
 }
 .edit-invitation .sidebar-panel .step-crumbs ul li a.active:after,
 .edit-invitation .sidebar-panel .step-crumbs ul li a:active:after,
 .edit-invitation .sidebar-panel .step-crumbs ul li a:hover:after {
-  border-left-color: #3498db;
+  border-left-color: #1981e4;
 }
 .edit-invitation .sidebar-panel .step-crumbs ul li a:before {
   content: "";
@@ -7642,29 +7644,47 @@ ul.social li a.fa {
 .edit-invitation .sidebar-panel .panel .options {
   margin: 10px 0;
 }
-.edit-invitation .sidebar-panel .form-horizontal .control-label {
+.edit-invitation .sidebar-panel .form .control-label {
   padding: 8px 0;
 }
-.edit-invitation .sidebar-panel .form-horizontal .form-group {
-  margin-bottom: 5px;
+.edit-invitation .sidebar-panel .form .floating-label {
+  color: #999;
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transition: 0.2s ease all;
 }
-.edit-invitation .sidebar-panel .form-horizontal input {
+.edit-invitation .sidebar-panel .form input:empty ~ .floating-label {
+  top: 10px;
+}
+.edit-invitation .sidebar-panel .form input:focus ~ .floating-label {
+  top: -20px;
+  font-size: 13px;
+  color: #1ab3f5;
+}
+.edit-invitation .sidebar-panel .form .form-group {
+  margin-bottom: 5px;
+  position: relative;
+}
+.edit-invitation .sidebar-panel .form input {
   font-size: 1em;
 }
-.edit-invitation .sidebar-panel .form-horizontal .input-group {
+.edit-invitation .sidebar-panel .form .input-group {
   padding: 0 15px;
 }
-.edit-invitation .sidebar-panel .form-horizontal .fa-map-marker {
+.edit-invitation .sidebar-panel .form .fa-map-marker {
   font-size: 1.4em;
 }
-.edit-invitation .sidebar-panel .form-horizontal .datepicker,
-.edit-invitation .sidebar-panel .form-horizontal .timepicker {
+.edit-invitation .sidebar-panel .form .datepicker,
+.edit-invitation .sidebar-panel .form .timepicker {
   width: 160px;
 }
-.edit-invitation .sidebar-panel .form-horizontal input[type='checkbox'] {
+.edit-invitation .sidebar-panel .form input[type='checkbox'] {
   margin-left: 15px;
 }
-.edit-invitation .sidebar-panel .form-horizontal input[type='number'] {
+.edit-invitation .sidebar-panel .form input[type='number'] {
   width: 60px;
 }
 .edit-invitation .invitation {

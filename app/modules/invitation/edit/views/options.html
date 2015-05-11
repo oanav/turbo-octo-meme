@@ -1,28 +1,59 @@
 ﻿<form name="form.optionsForm" class="form-horizontal" ng-submit="save()">
     <div class="panel panel-default animated fast fadeInLeft">
         <div class="panel-body options">
-            <div class="col-md-6">
+            <div>
+                <div class="title">RSVP Options</div>
                 <div class="form-group">
                     <input type="checkbox" ng-model="invitation.options.showRSVP" />
                     <label>Show RSVP</label>
                 </div>
+                <div ng-if="invitation.options.showRSVP">
+                    <div class="form-group">
+                        <span class="control-label">RSVP before:</span>
+                        <div class="input-group datepicker">
+                            <input class="form-control" datepicker-popup show-weeks="false" show-button-bar="false" ng-model="invitation.options.RSVPBefore"
+                            is-open="isOpened" />
+                            <span class="btn input-group-btn" ng-click="
+                            $event.preventDefault();
+                            $event.stopPropagation();
+                            isOpened=true; ">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" ng-model="invitation.options.allowBringPeople" />
+                        <label>Allow guests to bring other people</label>
+                        <i class="fa fa-info-circle info" 
+                        tooltip="This option will allow guests to indicate number of persons when sending a response."></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" ng-model="invitation.options.allowBringChildren" />
+                        <label>Allow guests to bring children</label>
+                        <i class="fa fa-info-circle info"
+                        tooltip="This option will allow guests to indicate number of children when sending a response."></i>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="title">Guest Options</div>
                 <div class="form-group">
                     <input type="checkbox" ng-model="invitation.options.showGuestList" />
                     <label>Show Guest List</label>
                 </div>
-            </div>
-            <div class="col-md-6">
                 <div class="form-group">
                     <input type="checkbox" ng-model="invitation.options.allowComments" />
                     <label>Allow Comments</label>
                 </div>
                 <div class="form-group">
                     <input type="checkbox" ng-model="invitation.options.allowSharing" />
-                    <label>Allow Sharing</label>
+                    <label>Allow Sharing</label> 
+                    <i class="fa fa-info-circle info" 
+                    tooltip="This option will allow guests to share the invitation on social networks (Facebook, Twitter)."></i>
                 </div>
             </div>
-            <div>&nbsp;</div>
-            <div class="col-md-12">
+            <div>
+                <div class="title">Notifications</div>
                 <div class="form-group">
                     <input type="checkbox" ng-model="invitation.options.notifyGuestResponse" />
                     <label>Notify me when a guest responds</label>
@@ -33,10 +64,8 @@
                 </div>
             </div>
         </div>
-
         <div class="panel-footer">
             <input type="button" class="btn btn-default" value="Reset" ng-click="reset()" />
             <a ui-sref="editInvitation.guestList" ng-click="save()" class="btn btn-success pull-right">Next</a>
         </div>
-    </div>
 </form>

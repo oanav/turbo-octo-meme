@@ -17,7 +17,7 @@ h1 {
     margin-bottom: 30px;
 }
 
-.body input {
+.body input, .body textarea {
     color: #fff;
     font-size: 16px;
 }
@@ -32,11 +32,14 @@ h1 {
     margin-bottom: 40px;
     text-shadow: 1px 1px #999;
 }
-
-.contact-info a,
-.contact-info a:hover,
-.contact-info a:active,
-.contact-info a:visited {
+.row {
+    margin:0;
+}
+.row b, .row span {
+    line-height: 2em;
+    padding: 0 5px;
+}
+ a, a:hover, a:active, a:visited {
     color: #fff;
 }
 

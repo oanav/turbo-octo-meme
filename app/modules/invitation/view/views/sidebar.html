@@ -1,15 +1,13 @@
 ﻿<div class="sidebar-menu">
-    <a ng-click="openSidebar('GuestList')"
-       ng-class="{active: sidebarOpened('GuestList')}">
+    <a ng-if="invitation.options.showGuestList" ng-click="openSidebar('GuestList')" ng-class="{active: sidebarOpened('GuestList')}">
         <i class="fa fa-users">
-            <span class="badge" ng-show="invitation.guestList.length > 0">{{invitation.guestList.length}}</span>
+            <span class="label label-info" ng-show="invitation.guestList.length > 0">{{invitation.guestList.length}}</span>
         </i>
         <div class="text"> Guest List</div>
     </a>
-    <a ng-click="openSidebar('Comments')"
-       ng-class="{active: sidebarOpened('Comments')}">
+    <a ng-if="invitation.options.allowComments" ng-click="openSidebar('Comments')" ng-class="{active: sidebarOpened('Comments')}">
         <i class="fa fa-comment">
-            <span class="badge" ng-show="invitation.comments.length > 0">{{invitation.comments.length}}</span>
+            <span class="label label-info" ng-show="invitation.comments.length > 0">{{invitation.comments.length}}</span>
         </i>
         <div class="text">Comments</div>
     </a>
@@ -17,7 +15,7 @@
         <i class="fa fa-calendar"></i>
         <div class="text">Add to Calendar</div>
     </a>
-    <a>
+    <a ng-if="invitation.details.address" ng-click="openMap()">
         <i class="fa fa-map-marker"></i>
         <div class="text">View Map</div>
     </a>
@@ -26,9 +24,19 @@
         <div class="text">Print</div>
     </a>
 </div>
-<!--<div class="share">
-    <div class="fb-share-button" data-href="{{url}}" data-layout="button"></div>
-</div>-->
+<ul class="social" ng-show="invitation.options.allowSharing">
+    <li>
+        <a href="" class="fa fa-facebook" ng-click="fbShare()"></a>
+    </li>
+    <li>  
+            <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+         <a href="https://twitter.com/share" class="fa fa-twitter" data-count="none"></a>
+    </li>
+</ul>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!--<div class="addthis_native_toolbox"></div>-->
 <div class="sidebar-panel" ng-class="{'collapse': !sidebarOpen}">
     <div class="animated fadeIn" ng-include="sidebarPath"></div>
 </div>

@@ -1,4 +1,6 @@
-﻿'use strict';
+﻿/* global google */
+/* global app */
+'use strict';
 
 app.directives.directive('addressAutocomplete', function () {
     return {

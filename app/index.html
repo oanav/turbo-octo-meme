@@ -10,6 +10,7 @@
         <!-- build:css(client) app/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast.css" />
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
         <!-- endbower -->
         <link rel="stylesheet" href="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.css" />
@@ -19,6 +20,9 @@
         <link rel="stylesheet" href="styles/animate.css">
         <!-- endbuild -->
         <base href="/">
+       
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554fcba878207a37" async="async"></script>
     </head>
     
     <body ng-app="app">
@@ -27,6 +31,24 @@
                 <strong>outdated</strong>browser. Please
                 <a href="http://browsehappy.com/">upgrade your browser</a>to improve your experience.</p>
         <![endif]-->
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                  appId      : '1045078145506496',
+                  xfbml      : true,
+                  version    : 'v2.3'
+                });
+              };
+        
+              (function(d, s, id){
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) {return;}
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/en_US/sdk.js";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));
+        </script>
+
         <!-- Add your site or application content here -->
         <header class="navbar" role="banner" ng-if="layout != layouts.EMPTY">
             <div ng-include="'/modules/main/views/shared/header.html'"></div>
@@ -102,6 +124,9 @@
         <script src="bower_components/angular-touch/angular-touch.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+        <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+        <script src="bower_components/ngToast/dist/ngToast.js"></script>
         <!-- endbower -->
         <script src="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.js"></script>
         <!-- endbuild -->
@@ -139,6 +164,7 @@
         <script src="scripts/directives/addressAutocomplete.js"></script>
         <script src="scripts/directives/autoexpand.js"></script>
         <script src="scripts/directives/field/field.js"></script>
+        <script src="scripts/directives/floatingLabel.js"></script>
         <script src="scripts/directives/timepicker-popup.js"></script>
         <script src="scripts/filters/filters.js"></script>
         <script src="scripts/services/AuthHttpResponseInterceptor.js"></script>

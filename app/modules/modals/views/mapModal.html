@@ -1,3 +1,9 @@
-﻿<div id="map_canvas" ng-controller="mainCtrl">
-    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="false">
-    </ui-gmap-google-map>
+﻿<div class="modal-header">
+	<span class="fa fa-remove pull-right" ng-click="close()"></span>
+</div>
+<div class="modal-body">
+	<ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options">
+	<ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id">
+        </ui-gmap-marker>
+	</ui-gmap-google-map>
+</div>

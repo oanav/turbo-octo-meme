@@ -37,6 +37,10 @@
     h2 {
         margin-bottom: 40px;
         font-size: 8vh;
+    } 
+    
+    p {
+        margin-top: 1em;
     }
 
     .footer {
@@ -55,29 +59,27 @@
             <div class="col-sm-4">
                 <field filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>
                 <br/>
-                <field filter="date:shortTime" placeholder="[time]" ng-model="invitation.details.time"></field>
+                <field filter="date:shortTime" placeholder="[Start time]" ng-model="invitation.details.startTime"></field>
+                <field filter="date:shortTime" ng-if="invitation.details.endTime" ng-model="invitation.details.endTime"> - </field>
             </div>
             <div class="col-sm-4">
                 <field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
                 <br />
                 <field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
             </div>
-            <div class="col-sm-4">
-                <p class="contact-info" ng-if="readOnly">
-                    <a ng-if="invitation.details.contactPhone" ng-href="tel:{{invitation.details.contactPhone}}">
-                           <i class="fa fa-phone"></i>{{invitation.details.contactPhone}}
-                        </a>
-                    <br/>
-                    <a ng-if="invitation.details.contactEmail" ng-href="tel:{{invitation.details.contactEmail}}">
-                        	<i class="fa fa-envelope"></i>{{invitation.details.contactEmail}}
-                        </a>
-                </p>
-                <p class="contact-info" ng-if="!readOnly">
+            <div class="col-md-4">
+                <field ng-model="invitation.details.hostName" placeholder="[Host]"></field>&nbsp
+                <field ng-if="!readOnly" type="tel" ng-model="invitation.details.phone" placeholder="[Phone]">
                     <i class="fa fa-phone"></i>
-                    <field ng-model="invitation.details.contactPhone" placeholder="[]"></field>
-                    <br/>
-                    <i class="fa fa-envelope"></i>
-                    <field ng-model="invitation.details.contactEmail" placeholder="[]"></field>
+                </field>
+                <a ng-if="readOnly && invitation.details.phone" ng-href="tel:{{invitation.details.phone}}">
+                        <i class="fa fa-phone"></i>
+                        {{invitation.details.phone}}
+                    </a>
+            </div>
+            <div class="col-md-12">
+                <p>
+                    <field type="textarea" ng-model="invitation.details.additionalInfo"></field>
                 </p>
             </div>
         </div>

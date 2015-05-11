@@ -8,11 +8,11 @@
 //## Gray and brand colors for use across Bootstrap.
 
 // Color pallette
-@color-blue:            #1981e4;
-@color-cyan:            #1ab3f5;
-@color-green:           #40d86d;
-@color-lightgreen:      #b5ebc5;
-@color-gray:            #e9ebee;
+@blue:           		#1981e4;
+@light-blue:      		#1ab3f5;
+@green:           		#40d86d;
+@light-green:      		#b5ebc5;
+@gray:            		#e9ebee;
 
 @gray-base:              #000;
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
@@ -21,9 +21,9 @@
 @gray-light:             #bbb;
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         @color-cyan;
-@brand-success:         @color-green;
-@brand-info:            @color-cyan;
+@brand-primary:         @light-blue;
+@brand-success:         @green;
+@brand-info:            @light-blue;
 @brand-warning:         #f8b045;
 @brand-danger:          #f33239;
 
@@ -517,9 +517,9 @@
 //** Tooltip max width
 @tooltip-max-width:           200px;
 //** Tooltip text color
-@tooltip-color:               #fff;
+@tooltip-color:               #999;
 //** Tooltip background color
-@tooltip-bg:                  #727272;
+@tooltip-bg:                  lighten(@light-blue, 40%);
 @tooltip-opacity:             .9;
 
 //** Tooltip arrow width

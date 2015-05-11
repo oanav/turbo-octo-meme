@@ -33,28 +33,23 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
-            //      injectJS: {
-            //        files: [
-            //          '<%= yeoman.app %>/**/*.js',
-            //          '!<%= yeoman.app %>/**/*.spec.js',
-            //          '!<%= yeoman.app %>/scripts/app.js'],
-            //        tasks: ['injector:scripts']
-            //      },
-      jsTest: {
-        files: [
-          '<%= yeoman.app %>/**/*.spec.js',
-        ],
-        tasks: ['newer:jshint:all', 'karma']
-      },
-            //      injectLess: {
-            //        files: [
-            //          '<%= yeoman.app %>/**/*.less'],
-            //        tasks: ['injector:less']
-            //      },
+      //      injectJS: {
+      //        files: [
+      //          '<%= yeoman.app %>/**/*.js',
+      //          '!<%= yeoman.app %>/**/*.spec.js',
+      //          '!<%= yeoman.app %>/scripts/app.js'],
+      //        tasks: ['injector:scripts']
+      //      },
+      //      jsTest: {
+      //        files: [
+      //          '<%= yeoman.app %>/**/*.spec.js',
+      //        ],
+      //        tasks: ['newer:jshint:all', 'karma']
+      //      },
       less: {
         files: [
           '<%= yeoman.app %>/**/*.less'],
-        tasks: ['autoprefixer', 'less']
+        tasks: ['less']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -193,7 +188,7 @@ module.exports = function (grunt) {
       },
       server: {
         files: {
-          '<%= yeoman.app %>/styles/app.css': '<%= yeoman.app %>/styles/app.less'
+          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/app.less'
         }
       },
     },
@@ -467,8 +462,9 @@ module.exports = function (grunt) {
       'wiredep',
       'injector:less',
       'concurrent:server',
-      'injector',
+      'injector:scripts',
       'autoprefixer:server',
+      'less',
       'connect:livereload',
       'watch'
     ]);
@@ -484,8 +480,9 @@ module.exports = function (grunt) {
     'wiredep',
     'injector:less',
     'concurrent:test',
-    'injector',
+    'injector:scripts',
     'autoprefixer',
+    'less',
     'connect:test',
     'karma'
   ]);
@@ -496,7 +493,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'injector:less',
     'concurrent:dist',
-    'injector',
+    'injector:scripts',
     'autoprefixer',
     'less',
     'concat',

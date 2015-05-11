@@ -5,9 +5,10 @@ app.directives.directive('fields', function () {
         restrict: 'EA',
         transclude: true,
         replace: true,
-        template: "<div class='fields' ng-transclude></div>",
+        template: "<div class='fields' ng-class='{readOnly: readOnly}' ng-transclude></div>",
         controller: function ($scope, $attrs, $parse) {
             this.readOnly = $parse($attrs.readOnly)($scope);
+            $scope.readOnly = this.readOnly;
         }
     };
 });
@@ -17,6 +18,7 @@ app.directives.directive('field', ['$compile', '$filter', function ($compile, $f
         require: ['^fields', 'ngModel'],
         scope: {
             ngModel: '=',
+            type:'@',
             filter: '@'
         },
         link: function (scope, elem, attr, ctrls) {
@@ -24,7 +26,7 @@ app.directives.directive('field', ['$compile', '$filter', function ($compile, $f
             var fieldsCtrl = ctrls[0];
             var placeholder = elem.attr("placeholder");
 
-            var textEl = angular.element("<span></span>");
+            var textEl = angular.element("<div class='text'></span>");
             elem.append(textEl);
 
             elem.addClass("field");
@@ -49,7 +51,14 @@ app.directives.directive('field', ['$compile', '$filter', function ($compile, $f
             };
 
             if (!fieldsCtrl.readOnly) {
-                var inputEl = angular.element("<input type='text' ng-model='ngModel' />");
+                var inputEl;
+                scope.type = scope.type || "text";
+                if(scope.type == "textarea") {
+                    inputEl = angular.element("<textarea ng-model='ngModel'></textarea>"); 
+                }
+                else { 
+                    inputEl = angular.element("<input type='{{type}}' ng-model='ngModel' />");
+                }
 
                 elem.on("click", function () {
                     textEl.css({ opacity: 0 });

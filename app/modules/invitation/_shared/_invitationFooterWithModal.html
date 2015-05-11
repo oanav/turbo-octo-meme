@@ -1,11 +1,8 @@
 ﻿<footer class="footer">
-    <ul class="social" ng-show="template.fields.allowSharing">
-        <li><a href="http://twitter.com" class="fa fa-facebook"></a></li>
-        <li><a href="http://facebook.com" class="fa fa-twitter"></a></li>
-    </ul>
     <div class="response">
-        <span> Attend? </span>
-        <div class="btn-group">
+        <div class="small" ng-if="invitation.options.RSVPBefore">RSVP before: {{invitation.options.RSVPBefore | date}}</div>
+        <div class="btn-group attend">
+            <label>Attend?</label>
             <label class="checkbox yes" btn-radio="1" ng-model="guest.rsvpResponse.attending" ng-click="openResponseModal()">Yes</label>
             <label class="checkbox no" btn-radio="2" ng-model="guest.rsvpResponse.attending" ng-click="openResponseModal()">No</label>
             <label class="checkbox" btn-radio="3" ng-model="guest.rsvpResponse.attending" ng-click="openResponseModal()">Maybe</label>

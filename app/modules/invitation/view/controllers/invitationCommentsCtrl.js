@@ -5,18 +5,6 @@ app.invitation.controller('InvitationCommentsCtrl',
     function ($scope, $location, $window, $modal, $state, CommentsService) {
 
         $scope.newComment = {};
-        $scope.newReply = {};
-        $scope.replyTo = {};
-
-        $scope.showReplyForm = function (comment) {
-            $scope.replyTo = comment;
-        }
-        $scope.replyFormVisible = function (comment) {
-            return $scope.replyTo.id == comment.id;
-        }
-        $scope.cancelReply = function () {
-            $scope.replyTo = {};
-        }
 
         $scope.submitComment = function () {
             var comment = {};
@@ -42,46 +30,59 @@ app.invitation.controller('InvitationCommentsCtrl',
             });
 
             $scope.newComment = {};
-        }
-
-        $scope.submitCommentReply = function (comment) {
-            var reply = {};
-            if ($scope.guest.id) {
-                reply.userId = $scope.guest.id;
-                reply.userName = $scope.guest.name;
-            }
-            reply.message = $scope.newReply.message;
-            reply.date = new Date();
-
-            CommentsService.addCommentReply(comment.id, reply)
-            .success(function (response) {
-                if (!reply.userId) {
-                    reply.userId = response.userId;
-                    reply.userName = response.userName;
-                }
-                $scope.comment.replies.push(reply);
-
-            })
-            .error(function (error) {
-                console.log(error);
-            });
-
-            $scope.newReply = {};
-            $scope.replyTo = {};
-        }
-
+        };
+        
         $scope.removeComment = function (comment, $index) {
             CommentsService.deleteComment(comment.id)
                 .success(function () {
                     $scope.invitation.comments.splice($index, 1);
-                })
-        }
+                });
+        };
+//
+//        $scope.newReply = {};
+//        $scope.replyTo = {};
+//
+//        $scope.showReplyForm = function (comment) {
+//            $scope.replyTo = comment;
+//        }
+//        $scope.replyFormVisible = function (comment) {
+//            return $scope.replyTo.id == comment.id;
+//        }
+//        $scope.cancelReply = function () {
+//            $scope.replyTo = {};
+//        }
+        
+//        $scope.removeCommentReply = function (comment, reply, $index) {
+//            CommentsService.deleteCommentReply(reply.id)
+//                .success(function () {
+//                    comment.replies.splice($index, 1);
+//                });
+//        };
+//        
+//        $scope.submitCommentReply = function (comment) {
+//            var reply = {};
+//            if ($scope.guest.id) {
+//                reply.userId = $scope.guest.id;
+//                reply.userName = $scope.guest.name;
+//            }
+//            reply.message = $scope.newReply.message;
+//            reply.date = new Date();
+//
+//            CommentsService.addCommentReply(comment.id, reply)
+//            .success(function (response) {
+//                if (!reply.userId) {
+//                    reply.userId = response.userId;
+//                    reply.userName = response.userName;
+//                }
+//                $scope.comment.replies.push(reply);
+//
+//            })
+//            .error(function (error) {
+//                console.log(error);
+//            });
+//
+//            $scope.newReply = {};
+//            $scope.replyTo = {};
+//        };
 
-        $scope.removeCommentReply = function (comment, reply, $index) {
-            CommentsService.deleteCommentReply(reply.id)
-                .success(function () {
-                    comment.replies.splice($index, 1);
-                })
-        }
-
-    }])
+    }]);

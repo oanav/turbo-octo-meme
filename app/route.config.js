@@ -53,7 +53,7 @@ app.config(function ($stateProvider) {
         controller: 'InvitationGuestListCtrl',
     })
         .state('viewInvitation', {
-        url: '/invitation/:id?guest_id&template',
+        url: '/invitation/:id?guest_id',
         templateUrl: '/modules/invitation/view/views/invitation.html',
         controller: 'ViewInvitationCtrl',
         data: {
@@ -61,7 +61,7 @@ app.config(function ($stateProvider) {
         }
     })
         .state('previewInvitation', {
-        url: '/invitation/?template',
+        url: '/invitation/preview/?template',
         templateUrl: '/modules/invitation/view/views/invitation.html',
         controller: 'ViewInvitationCtrl',
         data: {
