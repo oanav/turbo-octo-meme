@@ -1,0 +1,43 @@
+<nav class="collapse navbar-collapse navbar-menu" role="navigation" ng-controller="NavigationCtrl">
+	<div class="container">
+		<ul class="nav navbar-nav">
+			<li ng-repeat="category in categories">
+				<a class="category" href="/#/invitations/{{category.name}}/">{{category.name}}</a>
+				<ul class="submenu">
+					<li ng-repeat="subcategory in category.subcategories">
+						<a href="/#/invitations/{{category.name}}/{{subcategory.name}}">{{subcategory.name}}</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<!-- <div class="search-box">
+                    <input type="search" ng-model="searchText" placeholder="Search" />
+                    <a class="btn" href="/#/invitations?search={{searchText}}">
+                        <i class=" fa fa-search"></i>
+                    </a>
+                </div>--></div>
+</nav>
+<div ui-view></div>
+<footer class="footer main-footer">
+	<div class="container">
+		<ul class="social list-inline">
+			<li>
+				<a href="http://twitter.com" class="fa fa-facebook"></a>
+			</li>
+			<li>
+				<a href="http://facebook.com" class="fa fa-twitter"></a>
+			</li>
+		</ul>
+		<ul class="links list-inline">
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/about">About</a>
+			</li>
+			<li>
+				<a href="/contact">Contact</a>
+			</li>
+		</ul>
+	</div>
+</footer>

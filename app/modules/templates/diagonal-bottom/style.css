@@ -1,0 +1,68 @@
+.body {
+	display: block;
+	overflow: hidden;
+	height: 100%;
+	background: #121212;
+	font-size: 18px;
+}
+.body.pink .slope,
+.body.pink .footer {
+	background: #e90089;	
+}
+.body.pink .content h2,
+.body.pink .content h2 input {
+	color:#e90089;	
+}
+.body.green .slope,
+.body.green .footer {
+	background: #00B800;	
+}
+.body.green .content h2,
+.body.green .content h2 input {
+	color: #00B800;	
+}
+.slope{
+	color: #121212;
+	height: 70%;
+	margin: 0 -70px;
+	margin-top: 15%;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	-ms-transform-origin: left center;
+	transform-origin: left center;
+
+	-webkit-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.4) inset;
+	text-align: right;	
+}
+.slope .content {
+	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	transform: rotate(10deg);
+	padding: 10px 0;
+}
+.content{
+	padding: 10vh 0;
+	max-width: 70%;	
+	margin: auto;
+}
+.content h3 {
+	color: rgba(255,255,255,.5);
+}
+
+.content h2, .content h2 input{
+	font-size: 70px;
+	font-family: 'Bitter', 'Trebuchet MS', Arial;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+}
+.invitation .footer .response {
+	text-align: right;
+}
+

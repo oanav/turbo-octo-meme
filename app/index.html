@@ -11,6 +11,7 @@
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast.css" />
+        <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast-animations.css" />
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
         <!-- endbower -->
         <link rel="stylesheet" href="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.css" />
@@ -20,7 +21,6 @@
         <link rel="stylesheet" href="styles/animate.css">
         <!-- endbuild -->
         <base href="/">
-       
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554fcba878207a37" async="async"></script>
     </head>
@@ -48,56 +48,35 @@
                  fjs.parentNode.insertBefore(js, fjs);
                }(document, 'script', 'facebook-jssdk'));
         </script>
-
         <!-- Add your site or application content here -->
-        <header class="navbar" role="banner" ng-if="layout != layouts.EMPTY">
-            <div ng-include="'/modules/main/views/shared/header.html'"></div>
-            <nav class="collapse navbar-collapse navbar-menu" role="navigation" ng-controller="NavigationCtrl">
+        <header class="navbar navbar-fixed-top" role="banner">
+            <div class="page" ng-if="page=='INVITATION_EDIT'">
+                <a href="/#/">
+                <i class="fa fa-chevron-left"></i>
+                <span>Back</span>
+                </a>
+                <span class="page-title">{{pages[page]}}</span>
+            </div>
+            <div class="navbar-header">
                 <div class="container">
-                    <ul class="nav navbar-nav">
-                        <li ng-repeat="category in categories">
-                            <a class="category" href="/#/invitations/{{category.name}}/">{{category.name}}</a>
-                            <ul class="submenu">
-                                <li ng-repeat="subcategory in category.subcategories">
-                                    <a href="/#/invitations/{{category.name}}/{{subcategory.name}}">{{subcategory.name}}</a>
-                                </li>
-                            </ul>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/#/" class="navbar-brand">
+            <img src="/images/Logo.png" />
+        </a>
+                    <ul class="navbar-right">
+                        <li>
+                            <a href="/#/login">Sign In</a>
                         </li>
                     </ul>
-                    <div class="search-box">
-                        <input type="search" ng-model="searchText" placeholder="Search" />
-                        <a class="btn" href="/#/invitations?search={{searchText}}">
-                        <i class=" fa fa-search"></i>
-                    </a>
-                    </div>
                 </div>
-            </nav>
             </div>
         </header>
         <div id="ui-view" ui-view></div>
-        <footer class="footer main-footer" ng-if="layout != layouts.EMPTY">
-            <div class="container">
-                <ul class="social list-inline">
-                    <li>
-                        <a href="http://twitter.com" class="fa fa-facebook"></a>
-                    </li>
-                    <li>
-                        <a href="http://facebook.com" class="fa fa-twitter"></a>
-                    </li>
-                </ul>
-                <ul class="links list-inline">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
         <script>
             var ga;
@@ -140,7 +119,6 @@
         <script src="modules/invitation/module.js"></script>
         <script src="modules/main/module.js"></script>
         <script src="modules/modals/module.js"></script>
-        <script src="modules/templates/module.js"></script>
         <script src="modules/user/module.js"></script>
         <script src="modules/invitation/edit/controllers/editDetailsCtrl.js"></script>
         <script src="modules/invitation/edit/controllers/editGuestListCtrl.js"></script>
@@ -148,19 +126,19 @@
         <script src="modules/invitation/edit/controllers/editOptionsCtrl.js"></script>
         <script src="modules/invitation/view/controllers/invitationCommentsCtrl.js"></script>
         <script src="modules/invitation/view/controllers/invitationViewCtrl.js"></script>
+        <script src="modules/main/controllers/detailsCtrl.js"></script>
         <script src="modules/main/controllers/hello.js"></script>
-        <script src="modules/main/controllers/homeCtrl.js"></script>
+        <script src="modules/main/controllers/mainCtrl.js"></script>
         <script src="modules/main/controllers/navigationCtrl.js"></script>
+        <script src="modules/main/controllers/searchCtrl.js"></script>
         <script src="modules/modals/controllers/loginCtrl.js"></script>
         <script src="modules/modals/controllers/loginModal.js"></script>
         <script src="modules/modals/controllers/mapModalCtrl.js"></script>
         <script src="modules/modals/controllers/responseModalCtrl.js"></script>
-        <script src="modules/templates/controllers/detailsCtrl.js"></script>
-        <script src="modules/templates/controllers/searchCtrl.js"></script>
         <script src="modules/invitation/edit/services/commentsService.js"></script>
         <script src="modules/invitation/edit/services/invitationsService.js"></script>
-        <script src="modules/templates/services/searchService.js"></script>
-        <script src="modules/templates/services/templatesService.js"></script>
+        <script src="modules/main/services/searchService.js"></script>
+        <script src="modules/main/services/templatesService.js"></script>
         <script src="scripts/directives/addressAutocomplete.js"></script>
         <script src="scripts/directives/autoexpand.js"></script>
         <script src="scripts/directives/field/field.js"></script>

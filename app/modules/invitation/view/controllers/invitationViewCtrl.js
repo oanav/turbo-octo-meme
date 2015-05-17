@@ -25,7 +25,7 @@ app.invitation.controller('ViewInvitationCtrl',
                     if (response) {
                         $scope.template = response;
                         $scope.invitation.template = $scope.template;
-                        $scope.templatePath = "/modules/templates/views/templates/" + $scope.template.path + "/template.html";
+                        $scope.templatePath = "/modules/templates/" + $scope.template.path + "/template.html";
                         $scope.loader.loading = false;
                     }
                 })
@@ -40,7 +40,7 @@ app.invitation.controller('ViewInvitationCtrl',
                         $scope.invitation = response;
 
                         $scope.template = $scope.invitation.template;
-                        $scope.templatePath = "/modules/templates/views/templates/" + $scope.template.path + "/template.html";
+                        $scope.templatePath = "/modules/templates/" + $scope.template.path + "/template.html";
 
                         if (guest_id) {
                             $scope.guest = getGuest(guest_id) || {};

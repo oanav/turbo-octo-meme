@@ -1,0 +1,22 @@
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css' />
+<link href='/modules/templates/triangle-corners/style.css' rel='stylesheet' type='text/css' />
+<fields class="body blue" read-only="readOnly">
+	<div class="corner-top"></div>
+	<div class="content">
+		<h3>You're invited to</h3>
+		<h2>
+			<field ng-model="invitation.details.title" placeholder="[Event Title]"></field>
+		</h2>
+		<p>
+			<field filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>&nbsp
+			<field filter="date:shortTime" placeholder="[Start time]" ng-model="invitation.details.startTime"></field>
+			<field filter="date:shortTime" ng-if="invitation.details.endTime" ng-model="invitation.details.endTime">-</field>
+		</p>
+		<p>
+			<field ng-model="invitation.details.location" placeholder="[Location Name]"></field>&nbsp
+			<field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
+		</p>
+		<div ng-include="'/modules/invitation/_shared/_invitationFooterWithModal.html'"></div>
+	</div>
+	<div class="corner-bottom"></div>
+</fields>

@@ -1,0 +1,84 @@
+﻿<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+<style>
+    .body {
+        background-image: url(/modules/templates/gerbera/7Vrj3m2-flower-background.jpg);
+        background-size: cover;
+        position: relative;
+        font-size: 16px;
+        color: #936912;
+    }
+
+        .body input {
+            color: #936912;
+            text-align: center;
+        }
+
+    h1, h2 {
+        color: inherit;
+        color: #eac616;
+        text-shadow: 1px 1px #fff;
+    }
+
+    .content {
+        text-align: center;
+        padding: 30px 15px;
+        max-width: 800px;
+        height: 450px;
+        background: rgba(254, 248, 220, 0.90);
+        border: 2px solid #f8d93f;
+    }
+
+    h1 {
+        font-family: 'Great Vibes';
+        font-size: 10vh;
+    }
+
+    h2 {
+        margin-bottom: 40px;
+        font-size: 8vh;
+    }
+p{
+    margin-top: 1em;
+}
+    .footer {
+        margin-top: 30px;
+        background: transparent;
+    }
+</style>
+<div class="body">
+    <fields class="content absolute-center" read-only="readOnly">
+        <h1>You're invited to</h1>
+        <h2>
+            <field ng-model="invitation.details.title" placeholder="[Event Title]"></field>
+        </h2>
+        <div class="details row">
+             <div class="col-sm-4">
+                <field ng-model="invitation.details.hostName" placeholder="[Host]"></field>&nbsp
+                <field ng-if="!readOnly" type="tel" ng-model="invitation.details.phone" placeholder="[Phone]">
+                    <i class="fa fa-phone"></i>
+                </field>
+                <a ng-if="readOnly && invitation.details.phone" ng-href="tel:{{invitation.details.phone}}">
+                        <i class="fa fa-phone"></i>
+                        {{invitation.details.phone}}
+                    </a>
+            </div>
+            <div class="col-sm-4">
+                <field filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>
+                <br/>
+                <field filter="date:shortTime" placeholder="[Start time]" ng-model="invitation.details.startTime"></field>
+                <field filter="date:shortTime" ng-if="invitation.details.endTime" ng-model="invitation.details.endTime">-</field>
+            </div>
+            <div class="col-sm-4">
+                <field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
+                <br />
+                <field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
+            </div>
+<!--            <div class="col-sm-12">
+                <p>
+                    <field type="textarea" ng-model="invitation.details.additionalInfo"></field>
+                </p>
+            </div>-->
+        </div>
+        <div ng-include="'/modules/invitation/_shared/_invitationFooterWithModal.html'"></div>
+    </fields>
+</div>

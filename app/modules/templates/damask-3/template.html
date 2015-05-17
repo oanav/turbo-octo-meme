@@ -1,0 +1,111 @@
+﻿<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+<style>
+    .body {
+        font-size: 14px;
+        height: 100%;
+        display: table;
+    }
+
+    .center {
+        max-width: 750px;
+        width: 60%;
+        margin: auto;
+        background: #000;
+        text-align: center;
+        padding: 7vh;
+        display: table;
+    }
+    .left {
+        background: url('/modules/templates/damask-3/damask-border-left.jpg') ;
+        background-size: 100% 100%;
+        height:100%;
+        width: 20%;
+        float:left;
+    }
+    .right {
+       float:right;        
+           background: url('/modules/templates/damask-3/damask-border-right.jpg') ;
+        background-size: 100% 100%;
+       height:100%;
+       width: 20%;
+    }
+    
+    .content {
+        color: #fff;        
+    }
+    .details {
+        margin-top: 30px;
+    }
+
+    .body h1, .body h1 input {
+        font-family: 'Great Vibes';
+        font-size: 45px;
+        color: #fff;
+    }
+    
+    h1.small {
+        margin:0;
+        font-size: 24px;
+    }
+
+    .body input {
+        font-size: 14px;
+    }
+
+    .contact-info i {
+        margin-right: 5px;
+        margin-left: 10px;
+    }
+
+    .contact-info a,
+    .contact-info a:hover,
+    .contact-info a:active,
+    .contact-info a:visited {
+        color: #fff;
+    }
+
+    .footer {
+        position: relative;
+        background: none;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+        .footer .response {
+            text-align: left;
+        }
+</style>
+<div class="body">
+    <div class="left">
+    </div>
+     <div class="right">
+    </div>
+    <div class="center">
+        <fields class="content" read-only="readOnly">
+            <h1>
+                <field ng-model="invitation.details.brideName" placeholder="[Bride Name]"></field>
+            </h1>
+            <h1 class="small">and</h1>
+            <h1>
+                <field ng-model="invitation.details.groomName" placeholder="[Groom Name]"></field>
+            </h1>
+            <div class="details">
+                <p>Request your presence at the celebration of their marriage.</p>
+                <p>
+                    <field filter="date:fullDate" placeholder="[Date]" ng-model="invitation.details.date"></field>
+                    <field filter="date:shortTime" placeholder="[Start time]" ng-model="invitation.details.startTime"></field>
+                </p>
+                <p>
+                    <field ng-model="invitation.details.location" placeholder="[Location Name]"></field>
+                    <br/>
+                    <field ng-model="invitation.details.address.description" placeholder="[Location Address]"></field>
+                </p>
+                <p>Reception to follow.</p>
+                <!-- <p>
+                <field ng-model="invitation.details.additionalInfo" placeholder="[Additional info]"></field>
+            </p>-->
+            </div>
+            <div ng-include="'/modules/invitation/_shared/_invitationFooterWithModal.html'"></div>
+    </div>
+   
+</div>

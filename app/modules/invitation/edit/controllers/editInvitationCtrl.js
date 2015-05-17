@@ -25,7 +25,7 @@ app.invitation.controller('EditInvitationCtrl',
                     if (response) {
                         $scope.template = response;
                         $scope.invitation.template = $scope.template;
-                        $scope.templatePath = "/modules/templates/views/templates/" + $scope.template.path + "/template.html";
+                        $scope.templatePath = "/modules/templates/" + $scope.template.path + "/template.html";
                         $scope.loader.loading = false;
                     }
                 })
@@ -40,7 +40,7 @@ app.invitation.controller('EditInvitationCtrl',
                         $scope.invitation = response;
 
                         $scope.template = $scope.invitation.template;
-                        $scope.templatePath = "/modules/templates/views/templates/" + $scope.template.path + "/template.html";
+                        $scope.templatePath = "/modules/templates/" + $scope.template.path + "/template.html";
 
                         $scope.invitationCopy = angular.copy($scope.invitation);
 

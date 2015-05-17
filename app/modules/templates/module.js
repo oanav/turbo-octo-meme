@@ -1,1 +1,0 @@
-app.templates = angular.module('app.templates',[]);

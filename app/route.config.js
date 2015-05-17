@@ -4,29 +4,33 @@ app.config(function ($stateProvider) {
 	// https://github.com/angular-ui/ui-router
 
     $stateProvider
-        .state('home', {
+        .state('main', {
+        templateUrl: '/modules/main/views/main.html',
+        controller: 'MainCtrl'
+    })
+    .state('main.home', {
         url: '/',
         templateUrl: '/modules/main/views/home.html',
-        controller: 'HomeCtrl'
+        controller: 'MainCtrl'
     })
         .state('login', {
         url: '/account/login',
         templateUrl: '/modules/auth/views/login.html',
         controller: 'LoginCtrl'
     })
-        .state('browseCategory', {
+        .state('main.browse', {
         url: '/invitations/:category/:subcategory',
-        templateUrl: '/modules/templates/views/templateList.html',
+        templateUrl: '/modules/main/views/templateList.html',
         controller: 'SearchCtrl'
     })
-        .state('searchText', {
-        url: '/invitations?search',
-        templateUrl: '/modules/templates/views/templateList.html',
+        .state('main.search', {
+        url: '/invitations?searchText',
+        templateUrl: '/modules/main/views/templateList.html',
         controller: 'SearchCtrl'
     })
-        .state('templateDetails', {
+        .state('main.templateDetails', {
         url: '/template/:id',
-        templateUrl: '/modules/templates/views/templateDetails.html',
+        templateUrl: '/modules/main/views/templateDetails.html',
         controller: 'TemplateCtrl'
     })
         .state('editInvitation', {
@@ -34,7 +38,7 @@ app.config(function ($stateProvider) {
         templateUrl: '/modules/invitation/edit/views/invitation.html',
         controller: 'EditInvitationCtrl',
         data: {
-            layout: 'Empty',
+            page: 'INVITATION_EDIT',
         }
     })
         .state('editInvitation.details', {
@@ -57,7 +61,7 @@ app.config(function ($stateProvider) {
         templateUrl: '/modules/invitation/view/views/invitation.html',
         controller: 'ViewInvitationCtrl',
         data: {
-            layout: 'Empty',
+            page: 'INVITATION_VIEW',
         }
     })
         .state('previewInvitation', {
@@ -65,7 +69,7 @@ app.config(function ($stateProvider) {
         templateUrl: '/modules/invitation/view/views/invitation.html',
         controller: 'ViewInvitationCtrl',
         data: {
-            layout: 'Empty',
+            page: 'INVITATION_VIEW',
         }
     })
         .state('otherwise', {

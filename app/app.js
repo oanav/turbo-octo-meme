@@ -4,7 +4,7 @@
 // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
 var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'uiGmapgoogle-maps',
     'app.filters', 'app.services', 'app.directives',
-    'app.main', 'app.invitation', 'app.templates', 'app.user', 'app.modals',
+    'app.main', 'app.invitation', 'app.user', 'app.modals',
     'ngToast', 'ngAnimate', 'ngSanitize' 
     ])
 
@@ -22,15 +22,16 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'uiGmapgoogle-maps
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
-        $rootScope.layouts = {
-            EMPTY: 'Empty',
-            DEFAULT: 'Default'
+        $rootScope.pages = {
+            MAIN: 'Main',
+            INVITATION_EDIT: 'Edit Invitation',
+            INVITATION_VIEW: 'Invitation'
         };
 
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams) {
-            $rootScope.layout = null;
+            $rootScope.page = $rootScope.pages.MAIN;
             if (toState.data) {
-                $rootScope.layout = toState.data.layout;
+                $rootScope.page = toState.data.page;
         
                 var requireLogin = toState.data.requireLogin;
         

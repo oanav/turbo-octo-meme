@@ -5,8 +5,9 @@ html, body {
     height: 100%;
 }
 
-#ui-view {
-    height: 100%;
+body > #ui-view {
+   height: 100%;
+   padding-top: 60px;
 }
 
 .navbar {
@@ -18,9 +19,9 @@ html, body {
 .navbar-header {
     display: block;
     width: 100%;
-    background: @gray-lighter;
+    background: #f4f4f4;
     border-bottom: 1px solid #ccc;
-    height: 56px;
+    height: 60px;
     
     .navbar-right {
         margin:0;
@@ -29,7 +30,9 @@ html, body {
 
         > li > a {
             display: inline-block;
-            padding: 15px;
+            padding: 7px;
+            margin: 10px;
+            text-transform: uppercase;
 
             &:hover, &:focus, &:active {
                 background: @link-color;
@@ -50,8 +53,43 @@ html, body {
     }
 }
 
+  .navbar .page {
+            background: @light-blue;
+            color: #fff;
+            padding: 15px;
+            height: 60px;
+            font-size: 1.2em;
+                font-weight: 500;
+//            box-shadow: 2px 2px 2px #ccc;
+            width:360px;
+            position: absolute;
+
+            & > a {                
+                line-height: 1.8;
+                color: #fff;
+                text-decoration: none;
+
+                &:hover, &:focus {
+                    font-weight: 500;
+                }
+            }
+
+            .fa {
+                font-size: 1.5em;
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+            
+            .page-title {
+                float: right;
+                text-transform: uppercase;
+            }
+        }
+
 .navbar-menu {
     font-family: @font-family-serif;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
 
     .nav li {
         &:hover a.category {
@@ -134,7 +172,7 @@ html, body {
 
 .footer {
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: #f4f4f4;
 
     ul.social {
         float: right;

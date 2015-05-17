@@ -1,0 +1,57 @@
+.body {
+	overflow: hidden;
+	background: #efefef;
+	font-size: 18px;
+	color: #333;
+	height: 100%;
+}
+.body .angle {
+	background: #007bff;
+}
+.content h2, .content h2 input{
+	color: #007bff;
+}
+
+.angle{
+	float: left;
+	margin-right: 10%;
+	height: 130%;
+	width: 33%;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	-ms-transform-origin: left center;
+	transform-origin: left center;
+
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+	-o-transform: rotate(-7deg);
+	-ms-transform: rotate(-7deg);
+	transform: rotate(-7deg);
+	text-align: right;	
+	margin-left: -5%;
+}
+.content{
+	margin-top: 16vh;
+	
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+	-o-transform: rotate(-7deg);
+	-ms-transform: rotate(-7deg);
+	transform: rotate(-7deg);
+}
+
+.content h2, .content h2 input{
+	font-size: 70px;
+	font-family: 'Bitter', 'Trebuchet MS', Arial;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	margin-bottom: 40px;
+}
+.invitation .footer {
+	background: transparent;
+	margin-top: 40px;
+}
+.invitation .footer .response {
+	text-align: left;
+}
+

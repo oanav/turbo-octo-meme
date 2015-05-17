@@ -1,0 +1,52 @@
+.body {
+	overflow: hidden;
+	background: #121212;
+	font-size: 18px;
+	color: #777;
+	height: 100%;
+}
+.body .angle {
+	background-image: url(/modules/templates/green-stripes/stripe.png);
+}
+.content h2, .content h2 input{
+	color: #159C00;
+}
+
+.angle{
+	float: left;
+	height: 200%;
+	width: 30%;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	-ms-transform-origin: left center;
+	transform-origin: left center;
+
+	-webkit-transform: rotate(-40deg);
+	-moz-transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	-ms-transform: rotate(-40deg);
+	transform: rotate(-40deg);
+}
+.content{
+	margin-top: 15vh;
+	margin-left: 40%;
+}
+
+.content h2, .content h2 input{
+	font-size: 70px;
+	font-family: 'Bitter', 'Trebuchet MS', Arial;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	margin-bottom: 40px;
+}
+.content h3 {
+	color: #777;
+}
+.invitation .footer {
+	background: transparent;
+	margin-top: 40px;
+}
+.invitation .footer .response {
+	text-align: left;
+}
+
