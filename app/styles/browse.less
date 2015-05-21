@@ -1,10 +1,5 @@
 ﻿.search-page {
 
-    .breadcrumb {
-        padding: 5px 15px;
-        margin: 10px 0;
-    }
-
     .filters {
         border: 1px solid #ccc;
         padding: 10px 20px;
@@ -79,14 +74,28 @@
             margin-right: 15px;
             margin-bottom: 15px;
                 text-decoration: none;
+                transition: 400ms ease all;
+                overflow: hidden;
 
-            &:hover img {
-                opacity: .75;
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+                .actions {
+                    opacity: 1;
+                }
             }
-
-            img {
-                height: auto;
+            > a {
+                display: block;
+                height: 80%;
                 width: 100%;
+                overflow: hidden;
+                
+                img {
+                    height: 100%;
+                    width: 100%;
+                    transition: 400ms ease all;
+                }
             }
 
             .caption {
@@ -96,14 +105,16 @@
             .actions {
                 float: right;
                 cursor: pointer;
+                opacity:0;
                 
                 .fa {
-                    font-size: 1.2em;
+                    font-size: 1.1em;
                     margin-left: 7px;
-                    opacity: .8;
+                    color: #777;
+                    cursor: pointer;
                     
                     &:hover {
-                        opacity: 1;
+                        color: @link-color;
                     }
                 }
             }

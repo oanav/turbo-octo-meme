@@ -1,8 +1,8 @@
 ﻿'use strict';
 
 app.invitation.controller('ViewInvitationCtrl',
-    ['$scope', '$location', '$window', '$modal', '$state', 'TemplatesService', 'InvitationsService', 'CommentsService',
-        function ($scope, $location, $window, $modal, $state, TemplatesService, InvitationsService, CommentsService) {
+    ['$scope', '$location', '$window', '$modal', '$state', 'InvitationsService', 'CommentsService',
+        function ($scope, $location, $window, $modal, $state, InvitationsService, CommentsService) {
 
             $scope.$root.title = 'Onvite | Invitation';
 
@@ -20,7 +20,7 @@ app.invitation.controller('ViewInvitationCtrl',
 
             if (!id) {
                 $scope.loader.loading = true;
-                TemplatesService.getTemplate(template)
+                InvitationsService.getInvitationTemplate(template)
                     .success(function (response) {
                     if (response) {
                         $scope.template = response;

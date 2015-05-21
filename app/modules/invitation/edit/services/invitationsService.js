@@ -1,6 +1,9 @@
 ﻿app.invitation.factory('InvitationsService', ['$http', function ($http) {
 
     return {
+        getInvitationTemplate: function (id) {
+            return $http.get(app.serviceLocation + '/api/invitations/template/' + id);
+        },
         getInvitation: function (id) {
             return $http.get(app.serviceLocation + '/api/invitations?id=' + id);
         },

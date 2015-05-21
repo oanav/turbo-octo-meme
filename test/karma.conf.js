@@ -37,7 +37,8 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/lodash/dist/lodash.compat.js',
       'bower_components/angular-google-maps/dist/angular-google-maps.js',
-      'bower_components/ngToast/dist/ngToast.js',
+      'bower_components/angular-socialshare/angular-socialshare.js',
+      'bower_components/ngtoast/dist/ngToast.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

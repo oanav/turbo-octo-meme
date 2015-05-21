@@ -4,10 +4,10 @@
             <a href="#">Home</a>
         </li>
         <li>
-            <a href="/#/invitations//">Invitations</a>
+            <a href="/#/invitations/designs//">Invitations</a>
         </li>
         <li>
-            <a href="/#/invitations/{{category}}/">{{category}}</a>
+            <a href="/#/invitations/designs/{{category}}/">{{category}}</a>
         </li>
         <li class="active">{{subcategory}}</li>
     </ul>
@@ -21,7 +21,7 @@
                     <span class="fa toggle" ng-class="{'collapsed': category.collapsed}"></span>{{category.name}}</h6>
                 <ul class="list-group" collapse="category.collapsed">
                     <li ng-repeat="subcategory in category.subcategories">
-                        <a href="/#/invitations/{{category.name}}/{{subcategory.name}}">{{subcategory.name}}</a>
+                        <a href="/#/invitations/designs/{{category.name}}/{{subcategory.name}}">{{subcategory.name}}</a>
                     </li>
                 </ul>
             </div>
@@ -53,12 +53,12 @@
     <div class="results">
         <h5>{{subcategory ? subcategory : category}} Invitations</h5>
         <hr />
-        <div ng-repeat="invitation in results" class="invitation thumbnail ng-animated fadeIn">
-            <a ng-href="/#/template/{{invitation.id}}">
-                <img ng-src="{{invitation.imagePath}}" />
+        <div ng-repeat="template in results" class="invitation thumbnail ng-animated fadeIn">
+            <a ng-href="/#/invitations/designs/{{category}}/{{subcategory}}/{{template.id}}" class="img">
+                <img ng-src="{{template.imagePath}}" />
             </a>
             <div class="caption">
-                <span class="title">{{invitation.name}}</span>
+                <span class="title">{{template.name}}</span>
                 <div class="actions">
                     <span class="fa fa-eye"></span>
                     <span class="fa fa-search"></span>

@@ -2,10 +2,10 @@
 	<div class="container">
 		<ul class="nav navbar-nav">
 			<li ng-repeat="category in categories">
-				<a class="category" href="/#/invitations/{{category.name}}/">{{category.name}}</a>
+				<a class="category" href="/#/invitations/designs/{{category.name}}/">{{category.name}}</a>
 				<ul class="submenu">
 					<li ng-repeat="subcategory in category.subcategories">
-						<a href="/#/invitations/{{category.name}}/{{subcategory.name}}">{{subcategory.name}}</a>
+						<a href="/#/invitations/designs/{{category.name}}/{{subcategory.name}}">{{subcategory.name}}</a>
 					</li>
 				</ul>
 			</li>

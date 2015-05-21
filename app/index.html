@@ -10,9 +10,10 @@
         <!-- build:css(client) app/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast.css" />
-        <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast-animations.css" />
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="bower_components/ngtoast/dist/ngToast.css" />
+        <link rel="stylesheet" href="bower_components/ngtoast/dist/ngToast-animations.css" />
+        <link rel="stylesheet" href="bower_components/angular-socialshare/angular-socialshare.css" />
         <!-- endbower -->
         <link rel="stylesheet" href="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.css" />
         <!-- endbuild -->
@@ -22,7 +23,10 @@
         <!-- endbuild -->
         <base href="/">
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554fcba878207a37" async="async"></script>
+        <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554fcba878207a37" async="async"></script>-->
+        <script src="http://platform.twitter.com/widgets.js"></script>
+        <script src="http://platform.tumblr.com/v1/share.js"></script>
+        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js" data-pin-build='parsePins'></script>
     </head>
     
     <body ng-app="app">
@@ -31,7 +35,7 @@
                 <strong>outdated</strong>browser. Please
                 <a href="http://browsehappy.com/">upgrade your browser</a>to improve your experience.</p>
         <![endif]-->
-        <script>
+        <!-- <script>
             window.fbAsyncInit = function() {
                 FB.init({
                   appId      : '1045078145506496',
@@ -47,7 +51,7 @@
                  js.src = "//connect.facebook.net/en_US/sdk.js";
                  fjs.parentNode.insertBefore(js, fjs);
                }(document, 'script', 'facebook-jssdk'));
-        </script>
+        </script>-->
         <!-- Add your site or application content here -->
         <header class="navbar navbar-fixed-top" role="banner">
             <div class="page" ng-if="page=='INVITATION_EDIT'">
@@ -105,9 +109,9 @@
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <script src="bower_components/lodash/dist/lodash.compat.js"></script>
         <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
-        <script src="bower_components/ngToast/dist/ngToast.js"></script>
+        <script src="bower_components/angular-socialshare/angular-socialshare.js"></script>
+        <script src="bower_components/ngtoast/dist/ngToast.js"></script>
         <!-- endbower -->
-        <script src="bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.js"></script>
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="app.js"></script>
@@ -126,11 +130,11 @@
         <script src="modules/invitation/edit/controllers/editOptionsCtrl.js"></script>
         <script src="modules/invitation/view/controllers/invitationCommentsCtrl.js"></script>
         <script src="modules/invitation/view/controllers/invitationViewCtrl.js"></script>
-        <script src="modules/main/controllers/detailsCtrl.js"></script>
         <script src="modules/main/controllers/hello.js"></script>
         <script src="modules/main/controllers/mainCtrl.js"></script>
         <script src="modules/main/controllers/navigationCtrl.js"></script>
         <script src="modules/main/controllers/searchCtrl.js"></script>
+        <script src="modules/main/controllers/templateCtrl.js"></script>
         <script src="modules/modals/controllers/loginCtrl.js"></script>
         <script src="modules/modals/controllers/loginModal.js"></script>
         <script src="modules/modals/controllers/mapModalCtrl.js"></script>

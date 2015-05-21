@@ -1,7 +1,7 @@
 ﻿/* global app */
 'use strict';
 
-var appConfig = function ($stateProvider, $locationProvider, $httpProvider, ngToast) {
+var appConfig = function ($stateProvider, $locationProvider, $httpProvider, ngToast, $FB) {
 
     //  $locationProvider.html5Mode(true);
     //  $httpProvider.interceptors.push(AuthHttpResponseInterceptor);
@@ -11,6 +11,8 @@ var appConfig = function ($stateProvider, $locationProvider, $httpProvider, ngTo
       maxNumber: 3,
       animation: 'slide'
     });
+    
+//    $FB.init('1045078145506496');
 };
 
 appConfig.$inject = ['$stateProvider', '$locationProvider', '$httpProvider', 'ngToastProvider'];

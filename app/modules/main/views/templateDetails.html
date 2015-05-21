@@ -1,0 +1,55 @@
+<div class="container template-page">
+	<ul class="breadcrumb">
+		<li>
+			<a href="#">Home</a>
+		</li>
+		<li>
+			<a href="/#/invitations/designs//">Invitations</a>
+		</li>
+		<li>
+			<a href="/#/invitations/designs/{{category}}/">{{category}}</a>
+		</li>
+		<li>
+			<a href="/#/invitations/designs/{{category}}/{{subcategory}}">{{subcategory}}</a>
+		</li>
+		<li class="active">{{template.name}}</li>
+	</ul>
+	<div class="template row">
+		<div class="col-md-8">
+			<div class="template-img box">
+				<img ng-src="{{imagePath}}" />
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="actions box">
+				<h5>{{title}}</h5>
+				<rating class="rating" ng-model="rate" max="5" ng-click="setRating()"></rating>
+				<button class="btn btn-primary btn-large">Customize</button>
+				<button class="btn btn-primary btn-bordered">
+					<i class="fa fa-star"></i>Favorite</button>
+				<div class="social">
+					<div facebook class="facebookShare" data-title='{{shareModel.title}}' data-picture-url='{{shareModel.imageUrl}}' data-url='{{shareModel.url}}'
+					data-shares='shares'>{{ shares }}</div>
+					<div twitter data-count='horizontal' data-url='{{shareModel.url}}' data-via='notsosleepy' data-size="medium"
+					data-text='{{text}}'></div>
+					<div gplus data-size="small" data-annotation="bubble" data-href='{{shareModel.url}}' data-action='share'></div>
+					<div pintrest data-href='{{shareModel.url}}' data-description='{{shareModel.title}}' data-img='{{shareModel.imageUrl}}'></div>
+					<!-- <div tumblr-image data-source='{{shareModel.imageUrl}}' data-caption='Onvite | Online Invitation' data-clickthru='http://google.com'></div>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+				<div>Other designs you might like:</div>
+				<hr/>
+				<div class="suggestion-list">
+					<a ng-repeat="item in suggestions" ng-href="#/invitations/designs/{{category}}/{{subcategory}}/{{item.id}}">
+							<img ng-src="/modules/templates/{{item.path}}/snapshot.png" />
+						</a>
+				</div>
+				<hr/>
+		</div>
+	</div>
+</div>

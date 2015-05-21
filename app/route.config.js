@@ -19,17 +19,17 @@ app.config(function ($stateProvider) {
         controller: 'LoginCtrl'
     })
         .state('main.browse', {
-        url: '/invitations/:category/:subcategory',
+        url: '/invitations/designs/:category/:subcategory',
         templateUrl: '/modules/main/views/templateList.html',
         controller: 'SearchCtrl'
     })
         .state('main.search', {
-        url: '/invitations?searchText',
+        url: '/invitations/designs/?searchText',
         templateUrl: '/modules/main/views/templateList.html',
         controller: 'SearchCtrl'
     })
         .state('main.templateDetails', {
-        url: '/template/:id',
+        url: '/invitations/designs/:category/:subcategory/:id',
         templateUrl: '/modules/main/views/templateDetails.html',
         controller: 'TemplateCtrl'
     })

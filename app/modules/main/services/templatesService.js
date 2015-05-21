@@ -9,6 +9,9 @@ app.main.factory('TemplatesService', ['$http', function ($http) {
         getTemplates: function () {
             return $http.get(app.serviceLocation + '/api/templates/');
         },
+        getSugesstions: function (id) {
+            return $http.get(app.serviceLocation + '/api/template/suggestions?id='+id);
+        },
         getCategories: function () {
             return $http.get(app.serviceLocation + '/api/categories/');
         }

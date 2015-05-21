@@ -20,7 +20,7 @@ app.invitation.controller('EditInvitationCtrl',
 
             if (!id) {
                 $scope.loader.loading = true;
-                TemplatesService.getTemplate(template)
+                InvitationsService.getInvitationTemplate(template)
                     .success(function (response) {
                     if (response) {
                         $scope.template = response;

@@ -5,7 +5,7 @@
 var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'uiGmapgoogle-maps',
     'app.filters', 'app.services', 'app.directives',
     'app.main', 'app.invitation', 'app.user', 'app.modals',
-    'ngToast', 'ngAnimate', 'ngSanitize' 
+    'ngToast', 'ngAnimate', 'ngSanitize', 'djds4rce.angular-socialshare' 
     ])
 
 // Gets executed after the injector is created and are used to kickstart the application. Only instances and constants
